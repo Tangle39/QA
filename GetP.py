@@ -10,7 +10,6 @@ fres = open('C:/Users/Administrator/Desktop/res.csv', 'wb')
 writer=csv.writer(fres)
 writer.writerow(['hostname','loopback','uptime'])
 rootdir = 'C:/Users/Administrator/Desktop/log'
-rootdir = 'C:/Users/Administrator/Desktop/log'
 
 for parent, dirnames, filenames in os.walk(rootdir):
     i=0
@@ -31,7 +30,7 @@ for parent, dirnames, filenames in os.walk(rootdir):
         fres.write(','+list[-1])
 
         #uptime
-        t = re.findall('uptime.+', lines)  # findall进行正则匹配，不知为何compile不行了o.o
+        t = re.findall('uptime.+', lines)  # findall进行正则匹配
         # .：非换行任意字符，+：1次或任意次数；*：前一个字符0次或任意次
         t_convert = ''.join(t)  # list转string
         list = t_convert.split(' ')  # 根据空格切片
