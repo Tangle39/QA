@@ -9,7 +9,7 @@ import time  #时间模块
 
 fres = open('C:/Users/Administrator/Desktop/res.csv', 'wb')
 writer=csv.writer(fres)
-writer.writerow(['hostname','loopback','uptime'+time.strftime('%Y-%m-%d',time.localtime(time.time()))])   #列名
+writer.writerow(['hostname','loopback0','uptime'+time.strftime('%Y-%m-%d',time.localtime(time.time()))])   #列名
 rootdir = 'C:/Users/Administrator/Desktop/log'
 
 for parent, dirnames, filenames in os.walk(rootdir):
