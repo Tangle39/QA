@@ -5,10 +5,11 @@ import csv  #csv格式，类似txt结合excel
 import re #正则模块
 import os #文件处理模块
 import string  #字符串
+import time  #时间模块
 
 fres = open('C:/Users/Administrator/Desktop/res.csv', 'wb')
 writer=csv.writer(fres)
-writer.writerow(['hostname','loopback','uptime'])
+writer.writerow(['hostname','loopback','uptime'+time.strftime('%Y-%m-%d',time.localtime(time.time()))])   #列名
 rootdir = 'C:/Users/Administrator/Desktop/log'
 
 for parent, dirnames, filenames in os.walk(rootdir):
@@ -30,7 +31,7 @@ for parent, dirnames, filenames in os.walk(rootdir):
         fres.write(','+list[-1])
 
         #uptime
-        t = re.findall('uptime.+', lines)  # findall进行正则匹配
+        t = re.findall('uptime.+', lines)  # findall进行正则匹配，不知为何compile不行了o.o
         # .：非换行任意字符，+：1次或任意次数；*：前一个字符0次或任意次
         t_convert = ''.join(t)  # list转string
         list = t_convert.split(' ')  # 根据空格切片
