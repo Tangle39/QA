@@ -8,7 +8,7 @@ import string
 import os
 import re
 
-print 'start'
+print 'start'    #flag开始
 res=xlwt.Workbook() #新建表
 s1=res.add_sheet('uptime')  #新建sheet
 s2=res.add_sheet('version')
@@ -26,11 +26,10 @@ time=rootdir.split('/')
 s1.write(0,2,'uptime'+time[-2])   #第三列
 
 f_list = os.listdir(rootdir)
-del f_list[0]    #删除隐藏文件DS_store
+#del f_list[1]    #删除隐藏文件.DS_store（mac特有的文件）,该文件的位置暂时还不确定；目前已经用bash删除所有.ds_store，并且禁止生成
 
 for i in range(f_list.__len__()):
     list=str(f_list[i]).split('_')
-
     s1.write(i+1,0,list[-1])       #hostname在最后，ip在前
     s1.write(i+1,1,list[0])
     s2.write(i + 1, 0, list[-1])  # hostname在最后，ip在前
@@ -44,21 +43,17 @@ for i in range(f_list.__len__()):
     #print 'fname:'+fname
 
     f_list1 = os.listdir(fname)
-
     res0=''
     for j in f_list1:
-
         if j=='display version.txt':
             res0 = os.path.join(fname,j)
         if j=='show version.txt':
             res0 = os.path.join(fname,j)
 
-
     #2.正则匹配
     #2.1uptime(days)
     f=open(str(res0))
     lines=f.read()
-
     t = re.findall('uptime.+', lines)  # findall进行正则匹配，不知为何compile不行了o.o
     # .：非换行任意字符，+：1次或任意次数；*：前一个字符0次或任意次
     t_convert = ''.join(t)  # list转string
@@ -94,12 +89,9 @@ for i in range(f_list.__len__()):
     #2.3 BIN
     t2 = re.findall('flash:.+', lines)  # \d数字  {1，2}1-2个   \.将.转译回.
     t_convert = ''.join(t2)  # list转string
-    print t_convert
     l = t_convert.split(':')
     s0 = str(l[-1])
-    print s0
     l1 = s0.split('"')
-    print l1
     s2.write(i + 1, 3, l1[0])
 
-res.save('res.xls')
+res.save('res.xls')   #保存结果文件
