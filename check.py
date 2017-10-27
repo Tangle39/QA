@@ -1,6 +1,6 @@
 ## -*- coding: UTF-8 -*-
 
-# 10/28
+# 10/18？
 # 先检查excel红色行的配置是否正确
 # 准备：先从word里保存r1的cisco正确配置ciscofirewall.txt
 
