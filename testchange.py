@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# coding = utf-8   #感觉这个更简单
+# coding = utf-8   #感觉这个更简单,但是不一定好用
 #首先要找到能提出**version的文件目录字符串，暂时存到reslist里   17/9/22
 import re
 import csv #csv模块
