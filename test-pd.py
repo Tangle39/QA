@@ -25,4 +25,7 @@ Name: 使用起始时间, dtype: datetime64[ns]
 
 #方法2 loc函数
 t = df1.loc[:,u'使用起始时间']
-print t
+#print t
+t1 = df1[ lambda df1:  df1[u'使用起始时间'] < end_time  ]
+#取<end time的那行
+print t1
