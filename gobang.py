@@ -1,5 +1,6 @@
 '''
 转自公众号 AI社区
+需要自己准备bg,white,black三个图
 '''
 from time import sleep
 import pygame
