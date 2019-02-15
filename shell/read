@@ -1,0 +1,3 @@
+#
+shell 可以先adb shell 进入，再一条一条命令
+如果命令就一条 可以直接adb shell [command]
