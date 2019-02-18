@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 '''
 转自公众号 AI社区 test
 需要自己准备bg,white,black三个图
