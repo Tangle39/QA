@@ -12,12 +12,14 @@ driver = webdriver.Chrome(chrome_options=option)
 driver.get('https://memberprod.alipay.com/account/reg/enterpriseIndex.htm')#支付宝注册页面
 time.sleep(5) #推迟5s执行
 
-driver.switch_to.frame(driver.find_element_by_css_selector("body > div:nth-child(19) > div.alipay-xbox.alipay-xbox-show > div.alipay-xbox-content > iframe"))
+driver.switch_to.frame(driver.find_element_by_css_selector\
+("body > div:nth-child(19) > div.alipay-xbox.alipay-xbox-show > div.alipay-xbox-content > iframe"))
 #定位iframe
 driver.find_element_by_xpath('//*[@id="content"]/div[3]/a[1]/span').click()
 tupian = driver.find_element_by_id('J-checkcode-img')
 tupian.screenshot('./yanzheng.png')#?????这种方法记得有空请教一下  现在是根据坐标定位
 # driver.save_screenshot('yanzheng.png')#另外一种方法 更具屏幕位置截图
+
 host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=DxUWMVcUDbL3cE5fO1YbXv04&client_secret=2wd66hNR7OmGssOTEqP4lRt4NpIgf8KU'
 res = requests.get(host)
 r = res.json()
