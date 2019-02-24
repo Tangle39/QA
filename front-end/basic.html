@@ -1,5 +1,15 @@
 <html>
-<body>
+
+<head>
+<script type="text/javascript">
+function message()
+{
+alert("该提示框是通过 onload 事件调用的。")
+}	
+</script>
+</head>
+
+<body onload="message()">
 
 <script type="text/javascript">
 /*
@@ -7,9 +17,18 @@
 一个标题和两个段落
 */
 //单行注释
+
+
 document.write("<h1>这是标题</h1>");
 document.write("<p>这是段落。</p>");
 document.write("<p>这是另一个段落。</p>");
+var browser=navigator.appName
+var b_version=navigator.appVersion
+var version=parseFloat(b_version)
+document.write("浏览器名称："+ browser)
+document.write("<br />")
+//<br> 可插入一个简单的换行符。
+document.write("浏览器版本："+ version)
 </script>
 
 </body>
