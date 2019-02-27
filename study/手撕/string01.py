@@ -7,7 +7,7 @@
 如果当前字符流没有存在出现一次的字符，返回#字符。
 '''
 # -*- coding:utf-8 -*-
-class Solution:
+'''class Solution:
     # 返回对应char
     def __init__(self):
         self.s=''
@@ -25,8 +25,29 @@ class Solution:
             self.dict1[char]=self.dict1[char]+1
         else:
             self.dict1[char]=1
+
 str = Solution()
 
 str.Insert('google')
 s1 = str.FirstAppearingOnce()
 print s1
+'''
+s=''
+char='google'
+dict1={}
+        # write code here
+s=s+char
+print s
+if char in dict1:
+    dict1[char]=dict1[char]+1
+else:
+    dict1[char]=1
+print dict1
+
+def FirstAppearingOnce(s,dict1):
+            # write code here
+    for i in s:
+        if dict1[i] == 1:
+            return i
+        return '#'
+print FirstAppearingOnce(s,dict1)

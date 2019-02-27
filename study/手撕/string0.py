@@ -12,5 +12,5 @@ def isNumeric(s):
         return True
     except:
         return False
-s= raw_input() #输入字符串
+s= raw_input('字符串を输入ください\n') #输入字符串
 print isNumeric(s)
