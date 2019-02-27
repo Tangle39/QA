@@ -31,5 +31,5 @@ class Solution:
 a = Solution()
 a.Insert('#g#')
 
-#print a.FirstAppearingOnce()
+print a.FirstAppearingOnce()
 print a.s.count('#')
