@@ -7,47 +7,29 @@
 如果当前字符流没有存在出现一次的字符，返回#字符。
 '''
 # -*- coding:utf-8 -*-
-'''class Solution:
-    # 返回对应char
+
+
+
+class Solution:
     def __init__(self):
-        self.s=''
-        self.dict1={}
+        self.s = ""
+
     def FirstAppearingOnce(self):
-        # write code here
-        for i in self.s:
-            if self.dict1[i]==1:
-                return i
-        return '#'
+        res = list(filter(lambda c: self.s.count(c) == 1, self.s))
+        '''匿名函数lambda x: x * x 即
+        def f(x):
+            return x * x
+        filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回由符合条件元素组成的新列表。
+        filter(function, iterable)
+       Pyhton2.7返回列表，Python3.x返回迭代器对象
+       '''
+        return res[0] if res else "#"
+
     def Insert(self, char):
-        # write code here
-        self.s=self.s+char
-        if char in self.dict1:
-            self.dict1[char]=self.dict1[char]+1
-        else:
-            self.dict1[char]=1
+        self.s += char
 
-str = Solution()
+a = Solution()
+a.Insert('#g#')
 
-str.Insert('google')
-s1 = str.FirstAppearingOnce()
-print s1
-'''
-s=''
-char='google'
-dict1={}
-        # write code here
-s=s+char
-print s
-if char in dict1:
-    dict1[char]=dict1[char]+1
-else:
-    dict1[char]=1
-print dict1
-
-def FirstAppearingOnce(s,dict1):
-            # write code here
-    for i in s:
-        if dict1[i] == 1:
-            return i
-        return '#'
-print FirstAppearingOnce(s,dict1)
+#print a.FirstAppearingOnce()
+print a.s.count('#')
