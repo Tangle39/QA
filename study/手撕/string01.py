@@ -29,6 +29,6 @@ class Solution:
         self.s += char
 
 a = Solution()
-a.Insert('#g#')
+a.Insert('lglg')
 
 print a.FirstAppearingOnce()
