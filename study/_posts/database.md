@@ -8,8 +8,8 @@ SQL注入，就是通过把SQL命令插入到Web表单递交或输入域名或�
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。  
 ## case  
 1. 查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序  
-CREATE TABLE `employees` (  
-`emp_no` int(11) NOT NULL,  
+CREATE TABLE \`employees\` (  
+\`emp_no\` int(11) NOT NULL,  
 `birth_date` date NOT NULL,  
 `first_name` varchar(14) NOT NULL,    
 `last_name` varchar(16) NOT NULL,  
