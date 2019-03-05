@@ -1,9 +1,3 @@
-public class Main {
-
-    public static void main(String[] args) {
-        System.out.println("Saku popo!");
-    }
-}
 //给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
 /*
 假设x为环前面的路程（黑色路程），a为环入口到相遇点的路程（蓝色路程，假设顺时针走）， c为环的长度（蓝色+橙色路程）
@@ -29,3 +23,31 @@ x = (n - 2 * m )*c - a
 
 空间复杂度：O(1)
  */
+//思路
+
+//fast一次走2步，slow一次走一步，如果该链表有环，两个指针必然在环内相遇
+//此时只需要把其中的一个指针重新指向链表头部，另一个不变（还在环内），
+//这次两个指针一次走一步，相遇的地方就是入口节点。
+public class Solution {
+
+    ListNode EntryNodeOfLoop(ListNode pHead){
+        if(pHead == null || pHead.next == null)
+            return null;
+        ListNode p1 = pHead;
+        ListNode p2 = pHead;
+        while(p2 != null && p2.next != null ){
+            p1 = p1.next;
+            p2 = p2.next.next;
+            if(p1 == p2){
+                p2 = pHead;
+                while(p1 != p2){
+                    p1 = p1.next;
+                    p2 = p2.next;
+                }
+                if(p1 == p2)
+                    return p1;
+            }
+        }
+        return null;
+    }
+}
