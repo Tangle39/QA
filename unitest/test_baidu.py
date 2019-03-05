@@ -16,7 +16,7 @@ class BaiduTest(unittest.TestCase):
     def test_baidu(self):
         driver = self.driver
         driver.get(self.base_url + "/")
-        driver.find_element_by_id("kw").clear()
+        driver.find_element_by_id("kw").clear()   #百度页面的id为kw
         driver.find_element_by_id("kw").send_keys("unittest")
         driver.find_element_by_id("su").click()
         time.sleep(3)
