@@ -8,22 +8,22 @@ import unittest, time
 option = webdriver.ChromeOptions()
 option.add_argument('disable-infobars')#屏蔽顶部的通知栏
 class BaiduTest(unittest.TestCase):
-    def setUp(self):
+    def setUp(self):   #固有
         self.driver = webdriver.Chrome(chrome_options=option)
         self.driver.implicitly_wait(30)  # 隐性等待时间为30秒
         self.base_url = "https://www.baidu.com"
 
     def test_baidu(self):
         driver = self.driver
-        driver.get(self.base_url + "/")
+        driver.get(self.base_url+ "/" ) #
         driver.find_element_by_id("kw").clear()   #百度页面的id为kw
         driver.find_element_by_id("kw").send_keys("unittest")
         driver.find_element_by_id("su").click()
         time.sleep(3)
-        title = driver.title
-        self.assertEqual(title, u"unittest_百度搜索")
+        title = driver.title   #浏览器标题
+        self.assertEqual(title, u"unittest_百度搜索") #check
 
-    def tearDown(self):
+    def tearDown(self):  #固有
         self.driver.quit()
 
 
