@@ -1,7 +1,7 @@
 # coding=utf-8
 from selenium import webdriver
 import unittest, time
-import airtest
+import HTMLTestRunner
 
 option = webdriver.ChromeOptions()
 option.add_argument('disable-infobars')#屏蔽顶部的通知栏
@@ -29,9 +29,9 @@ class Test(unittest.TestCase):
         #xhf提供的定位方法
         # driver.find_element_by_css_selector('#root > div > div > div > div.applyBtn  > a').click()  #第二个btn?待修正
         time.sleep(2)
-        driver.find_element_by_id("orgName").send_keys(u"东阳中学")
-        driver.find_element_by_id('mobile').send_keys(13745678901)
-        driver.find_element_by_xpath('//*[@id="code"]/input').send_keys('123123')
+        driver.find_element_by_id("orgName").send_keys(u"测试账号-东阳中学-勿回")
+        driver.find_element_by_id('mobile').send_keys(15221286041)
+        driver.find_element_by_xpath('//*[@id="code"]/input').send_keys('3694')
         driver.find_element_by_xpath('//*[@id="root"]/div/div/div/div[2]/form/button').click()
 
         time.sleep(3)
@@ -42,4 +42,5 @@ class Test(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    print '=====AutoTest Start======'
     unittest.main()
