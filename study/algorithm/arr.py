@@ -15,7 +15,7 @@ class Solution:
                 break
         return flag
 while True:
-    try:
+    try:    #输入正确时连续测试？
         S=Solution()
         # 字符串转为list
         L=list(eval(raw_input()))
