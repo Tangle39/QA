@@ -13,7 +13,7 @@ class BaiduTest(unittest.TestCase):
         self.driver.implicitly_wait(30)  # 隐性等待时间为30秒
         self.base_url = "https://www.baidu.com"
 
-    def test_baidu(self):
+    def test_baidu0(self):
         driver = self.driver
         driver.get(self.base_url+ "/" ) #
         driver.find_element_by_id("kw").clear()   #百度页面的id为kw

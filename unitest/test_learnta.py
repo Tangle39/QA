@@ -5,6 +5,7 @@ import HTMLTestRunner
 
 option = webdriver.ChromeOptions()
 option.add_argument('disable-infobars')#屏蔽顶部的通知栏
+print '=====AutoTest Start======'
 class Test(unittest.TestCase):
     def setUp(self):   #固有
         self.driver = webdriver.Chrome(chrome_options=option)
@@ -42,5 +43,5 @@ class Test(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    print '=====AutoTest Start======'
+
     unittest.main()
