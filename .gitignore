@@ -2,5 +2,5 @@
 *.iml
 *.xml
 .DS_Store
-unitest/test_baidu.pyc
-unitest/test_youdao.pyc
+
+*.pyc
