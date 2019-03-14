@@ -49,6 +49,6 @@ ls -S \`grep -Rl Ex ./* \`
 3. 更改Linux系统的主机名(hostname)  
 `sudo vi /etc/hostname`
 
->reference
+>reference  
 http://ju.outofmemory.cn/entry/337199
 https://www.cnblogs.com/shishanyu/p/7966975.html
