@@ -1,5 +1,8 @@
-* 更改Linux系统的主机名(hostname)  
-`sudo vi /etc/hostname`
+* Q:linux开机过程？  
+1. 加载BIOS（Basic Input Output System）  
+2. 读取MBR（Main Boot Record）  
+3. Boot Load
+
 
 ## vi  
 : wq (输入「wq」，存盘并退出vi)  
@@ -43,5 +46,9 @@ ls -S \`grep -Rl Ex ./* \`
 2. 11分钟后关机  
 `shutdown -h +11`  
 
+3. 更改Linux系统的主机名(hostname)  
+`sudo vi /etc/hostname`
 
+>reference
 http://ju.outofmemory.cn/entry/337199
+https://www.cnblogs.com/shishanyu/p/7966975.html
