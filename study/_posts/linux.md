@@ -1,4 +1,4 @@
-* Q:linux开机过程？  
+## Q:linux开机过程？  
 1. 加载BIOS（Basic Input Output System）  
 2. 读取MBR（Main Boot Record）  
 3. Boot Load  
@@ -43,7 +43,7 @@
 
 2. 调用解释器使得脚本执行：`bash echo.sh`  
 
-* case  
+## case  
 
 1. 当前文件夹及子目录中找出内容含“Ex”的文件并按文件大小排序。  
 ls -S \`grep -Rl Ex ./* \`  
