@@ -7,7 +7,6 @@ SQL注入，就是通过把SQL命令插入到Web表单递交或输入域名或�
 ## SQL LEFT JOIN 关键字  
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。  
 ## case  
-1. 查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序  
 CREATE TABLE \`employees\` (  
 \`emp_no\` int(11) NOT NULL,  
 `birth_date` date NOT NULL,  
@@ -23,6 +22,14 @@ CREATE TABLE `salaries` (
 `from_date` date NOT NULL,  
 `to_date` date NOT NULL,  
 PRIMARY KEY (`emp_no`,`from_date`));    
+CREATE TABLE `dept_manager` (  
+`dept_no` char(4) NOT NULL,  
+`emp_no` int(11) NOT NULL,  
+`from_date` date NOT NULL,  
+`to_date` date NOT NULL,  
+PRIMARY KEY (`emp_no`,`dept_no`));  
+
+?1. 查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序  
 * 方法1  
 找出最小日期也可以说是最早的日期（ min（from_date）），这个最小日期就是员工刚入职时候的日期，对应的工资就是入职时候的工资  
 `select emp_no,salary from salaries group by emp_no having min(from_date) order by emp_no DESC`  
@@ -31,17 +38,19 @@ PRIMARY KEY (`emp_no`,`from_date`));
 `SELECT e.emp_no, s.salary FROM employees AS e, salaries AS s  
 WHERE e.emp_no = s.emp_no AND e.hire_date = s.from_date  
 ORDER BY e.emp_no DESC`  
-
-2. 查找薪水涨幅超过15次的员工号emp_no以及其对应的涨幅次数t  
+?2. 查找薪水涨幅超过15次的员工号emp_no以及其对应的涨幅次数t  
 * 分析：
 1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数  
 2、根据题意，输出的涨幅次数为t，故用AS语句将COUNT(emp_no)的值转换为t  
 3、由于COUNT()函数不可用于WHERE语句中，故使用HAVING语句来限定t>15的条件  
 `select emp_no, count(emp_no) as t FROM salaries GROUP BY emp_no HAVING t > 15`
 
-3. 查找最晚入职员工的所有信息
+1. 查找最晚入职员工的所有信息
 select * from employees where hire_date = (select max(hire_date) from employees)  
-4. 查找入职员工时间排名倒数第三的员工所有信息  
-`select * from employees where hire_date = (select distinct hire_date from employees order by hire_date desc limit 2,1)`
+2. 查找入职员工时间排名倒数第三的员工所有信息  
+`select * from employees where hire_date = (select distinct hire_date from employees order by hire_date desc limit 2,1)`  
+3. 查找各个部门当前(to_date='9999-01-01')领导当前薪水详情以及其对应部门编号dept_no  
+`select s.*,d.dept_no from salaries s,dept_manager d where s.to_date = '9999-01-01' and d.to_date = '9999-01-01' and s.emp_no = d.emp_no`
 
-from https://www.nowcoder.com/ta/sql
+>from  
+https://www.nowcoder.com/ta/sql
