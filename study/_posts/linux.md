@@ -1,8 +1,14 @@
 * Q:linux开机过程？  
 1. 加载BIOS（Basic Input Output System）  
 2. 读取MBR（Main Boot Record）  
-3. Boot Load
-
+3. Boot Load  
+4. 加载内核  
+5. 用户层init依据inittab文件来设定运行等级  
+6. init进程执行rc.sysinit  
+7. 启动内核模块  
+8. 执行不同运行级别的脚本程序  
+9. 执行/etc/rc.d/rc.local  
+10. 执行/bin/login程序，进入登录状态
 
 ## vi  
 : wq (输入「wq」，存盘并退出vi)  
@@ -50,5 +56,5 @@ ls -S \`grep -Rl Ex ./* \`
 `sudo vi /etc/hostname`
 
 >reference  
-http://ju.outofmemory.cn/entry/337199
+http://ju.outofmemory.cn/entry/337199  
 https://www.cnblogs.com/shishanyu/p/7966975.html
