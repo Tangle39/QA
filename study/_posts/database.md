@@ -1,11 +1,23 @@
-# SQL注入  
-SQL注入，就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令，比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单递交查询字符暴出的，这类表单特别容易受到SQL注入式攻击．
-
+# 事务(Transaction)四大特性  
+原子性，要么执行，要么不执行  
+隔离性，所有操作全部执行完以前其它会话不能看到过程  
+一致性，事务前后，数据总额一致  
+持久性，一旦事务提交，对数据的改变就是永久的  
+# 数据库隔离级别  
+脏读(Read out of invalid data)：事务B读取事务A还没有提交的数据  
+不可重复读：两次事务读的数据不一致（事务A首先读取了一条数据，然后执行逻辑的时候，事务B将这条数据改变了，然后事务A再次读取的时候，发现数据不匹配了，就是所谓的不可重复读了）  
+幻读:事务A修改了数据，事务B也修改了数据，这时在事务A看来，明明修改了数据，咋不一样  
+# MYSQL的两种存储引擎  
+引擎	特性
+MYISAM	不支持外键，表锁，插入数据时，锁定整个表，查表总行数时，不需要全表扫描
+INNODB	支持外键，行锁，查表总行数时，全表扫描
 # 关键字  
 ## INNER JOIN  
 在表中存在至少一个匹配时，INNER JOIN 关键字返回行。(=JOIN)
 ## SQL LEFT JOIN 关键字  
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。  
+# SQL注入  
+SQL注入，就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令，比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单递交查询字符暴出的，这类表单特别容易受到SQL注入式攻击．  
 ## case  
 CREATE TABLE \`employees\` (  
 \`emp_no\` int(11) NOT NULL,  
@@ -53,4 +65,6 @@ select * from employees where hire_date = (select max(hire_date) from employees)
 `select s.*,d.dept_no from salaries s,dept_manager d where s.to_date = '9999-01-01' and d.to_date = '9999-01-01' and s.emp_no = d.emp_no`
 
 >from  
-https://www.nowcoder.com/ta/sql
+https://www.nowcoder.com/ta/sql  
+https://blog.csdn.net/Somhu/article/details/78775198  
+https://blog.csdn.net/qq_22222499/article/details/79060495#1_4
