@@ -1,11 +1,10 @@
 
 *.iml
 *.xml
-.DS_Store
-
+*.DS_Store
 *.pyc
 *.plist
 *.xcuserstate
 *.xcworkspacedata
 *.pbxproj
-*.pbxproj
+
