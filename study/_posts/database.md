@@ -49,7 +49,7 @@ INNER JOIN
 LEFT JOIN   
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。  
 natural join  
-根据左右两表的**相同列**创建一个隐含的join操作，相同列就是两表中列名相同的两列。自然交可以是内交，左交或者是右交。默认是内交。 
+根据左右两表的**相同列**创建一个隐含的join操作，相同列就是两表中列名相同的两列。自然交可以是内交，左交或者是右交。默认是内交。   
 Having  
 “Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用聚合函数。  
 
@@ -108,6 +108,9 @@ select * from employees where hire_date = (select max(hire_date) from employees)
 4. 查找所有已经分配部门的员工的last_name和first_name  
 `SELECT e.last_name, e.first_name, d.dept_no
 FROM dept_emp d NATURAL JOIN employees e;`  
+5. 查找所有员工的last_name和first_name以及对应部门编号dept_no，也包括展示没有分配具体部门的员工  
+`select e.last_name,e.first_name,d.dept_no 
+from employees e left join dept_emp d on e.emp_no=d.emp_no`  
 
 >from  
 https://www.nowcoder.com/ta/sql  
