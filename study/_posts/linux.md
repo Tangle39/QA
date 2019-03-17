@@ -61,6 +61,13 @@ grep -n:结果输出行号
 arp命令用于操作主机的arp缓冲区，可以用来显示arp缓冲区中的所有条目、删除指定的条目或者添加静态的ip地址与MAC地址对应关系。  
 查看ARP缓存记录的命令  
 `arp -a`  
+6. 重新启动Linux系统的同时把内存中的信息写入硬盘  
+shutdown -r now  
+shutdown命令可以**安全地**关闭或重启Linux系统  
+使用reboot命令可以快速地关闭系统，但如果还有其它用户在该系统上工作时，就会引起数据的**丢失**。所以使用reboot命令的场合主要是在**单用户**模式。  
+7. 切换目录  
+home:cd ~  
+根目录:cd /
 
 >reference  
 http://ju.outofmemory.cn/entry/337199  
