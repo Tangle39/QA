@@ -42,10 +42,12 @@
 * 触发器  
 触发器是一种特殊类型的存储过程，它不同于存储过程。触发器主要是通过事件进行触发而被执行的，而存储过程可以通过存储过程名字而被直接调用。当对某一表进行诸如Update、Insert、Delete这些操作时，SQL Server 就会自动执行触发器所定义的SQL语句，从而确保对数据的处理必须符合由这些SQL语句所定义的规则。  
 # 关键字  
-## INNER JOIN  
+INNER JOIN  
 在表中存在至少一个匹配时，INNER JOIN 关键字返回行。(=JOIN)
-## SQL LEFT JOIN 关键字  
+SQL LEFT JOIN 关键字  
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。  
+natural join  
+根据左右两表的__相同列__创建一个隐含的join操作，相同列就是两表中列名相同的两列。自然交可以是内交，左交或者是右交。默认是内交。  
 # SQL注入  
 SQL注入，就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令，比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单递交查询字符暴出的，这类表单特别容易受到SQL注入式攻击．  
 ## case  
@@ -71,6 +73,13 @@ CREATE TABLE `dept_manager` (
 `to_date` date NOT NULL,  
 PRIMARY KEY (`emp_no`,`dept_no`));  
 
+CREATE TABLE \`dept_emp\` (  
+`emp_no` int(11) NOT NULL,  
+`dept_no` char(4) NOT NULL,   
+`from_date` date NOT NULL,    
+`to_date` date NOT NULL,  
+PRIMARY KEY (`emp_no`,`dept_no`));  
+
 ?1. 查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序  
 * 方法1  
 找出最小日期也可以说是最早的日期（ min（from_date）），这个最小日期就是员工刚入职时候的日期，对应的工资就是入职时候的工资  
@@ -92,7 +101,10 @@ select * from employees where hire_date = (select max(hire_date) from employees)
 2. 查找入职员工时间排名倒数第三的员工所有信息  
 `select * from employees where hire_date = (select distinct hire_date from employees order by hire_date desc limit 2,1)`  
 3. 查找各个部门当前(to_date='9999-01-01')领导当前薪水详情以及其对应部门编号dept_no  
-`select s.*,d.dept_no from salaries s,dept_manager d where s.to_date = '9999-01-01' and d.to_date = '9999-01-01' and s.emp_no = d.emp_no`
+`select s.*,d.dept_no from salaries s,dept_manager d where s.to_date = '9999-01-01' and d.to_date = '9999-01-01' and s.emp_no = d.emp_no`  
+4. 查找所有已经分配部门的员工的last_name和first_name  
+`SELECT e.last_name, e.first_name, d.dept_no
+FROM dept_emp d NATURAL JOIN employees e;`  
 
 >from  
 https://www.nowcoder.com/ta/sql  
