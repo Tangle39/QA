@@ -25,7 +25,7 @@
 <td>支持外键，行锁，查表总行数时，全表扫描</td>
 </tr>
 </tbody>
-</table>
+</table>  
 # 关键字  
 ## INNER JOIN  
 在表中存在至少一个匹配时，INNER JOIN 关键字返回行。(=JOIN)
