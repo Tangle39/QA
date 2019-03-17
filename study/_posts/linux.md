@@ -47,13 +47,20 @@
 
 1. 当前文件夹及子目录中找出内容含“Ex”的文件并按文件大小排序。  
 ls -S \`grep -Rl Ex ./* \`  
-\# -S从大到小  grep：-R搜寻子目录，-l只显示文件名   利用\` \`将其作为ls的输入  
+\# -S从大到小  grep：-R搜寻子目录，-l只显示文件名   利用\` \`将其作为ls的输入   少\*会多一个/
+grep -n:结果顺便输出行号
 
 2. 11分钟后关机  
 `shutdown -h +11`  
 
 3. 更改Linux系统的主机名(hostname)  
-`sudo vi /etc/hostname`
+`sudo vi /etc/hostname`  
+4. 显示当前目录下的所有文件及文件夹包括隐藏的.和..等的详细信息  
+`ls -al`  
+5. arp(Address Resolution Protocol)  
+arp命令用于操作主机的arp缓冲区，可以用来显示arp缓冲区中的所有条目、删除指定的条目或者添加静态的ip地址与MAC地址对应关系。  
+查看ARP缓存记录的命令  
+`arp -a`  
 
 >reference  
 http://ju.outofmemory.cn/entry/337199  
