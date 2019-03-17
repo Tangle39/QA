@@ -1,12 +1,8 @@
 
 *.iml
 *.xml
-*.DS_Store
 *.pyc
 *.plist
 *.xcuserstate
 *.xcworkspacedata
-
-
-study/algorithm/.DS_Store
 *.pbxproj
