@@ -26,6 +26,7 @@ time=rootdir.split('/')
 s1.write(0,2,'uptime'+time[-2])   #第三列
 
 f_list = os.listdir(rootdir)
+#os.listdir(path)：返回指定路径下的文件和文件夹列表。
 #del f_list[1]    #删除隐藏文件.DS_store（mac特有的文件）,该文件的位置暂时还不确定；目前已经用bash删除所有.ds_store，并且禁止生成
 
 for i in range(f_list.__len__()):
