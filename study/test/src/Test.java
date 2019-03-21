@@ -1,6 +1,8 @@
 public class Test{
 
-    public static void main(String args[]){
+    public static void main(String[] args){
+/*static:方便在没有创建对象的情况下来进行调用（方法/变量）。*/
+//String[] args:方便外面的数据引入到main函数中。
         Integer x = 5;
         x =  x + 10;
         System.out.println(x);
