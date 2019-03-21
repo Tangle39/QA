@@ -36,7 +36,7 @@
         </tr>
     </table>   
 
-* 写了shell，怎么运行? 几种方法:  
+## 写了shell，怎么运行? 几种方法:  
 
 1. 加执行权限：`chmod +x echo.sh`  
 然后：在目录下`./ echo.sh`  
