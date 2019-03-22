@@ -16,13 +16,13 @@ class Solution:
             return 0
         else:
             for i in range(len(haystack)):#0 1 2 3 4
-                if(haystack[i:num+i]==needle):#[0:2] 简单暴力
+                if(haystack[i:num+i]==needle):#[0:2] 简单暴力，这样子格式可以
                     return i
         return -1
 if __name__ == '__main__':
     S = Solution()
     h = ("hello")
-    n = ("#")
+    n = ("lo")
 
     print(S.strStr(h,n))
 
