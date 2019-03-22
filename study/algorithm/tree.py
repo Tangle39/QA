@@ -19,7 +19,7 @@ class Solution:
         root.left = self.reConstructBinaryTree(pre, tin[:index])
         root.right = self.reConstructBinaryTree(pre, tin[index + 1:])
         return root
-
+    #前序遍历&打印值
     def preTr(self,root):
 
         if root == None:
