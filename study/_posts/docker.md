@@ -26,13 +26,15 @@ docker search [options "o">] term
 docker search -s  django
 
 
-从 Docker Hub 中搜索符合条件的镜像。  
+从 Docker Hub 中搜索符合条件的镜像。 
+
 4. docker pull
 docker pull [-a "o">] [user/ "o">]name[:tag "o">]
 docker pull laozhu/telescope:latest
 
 
 从 Docker Hub 中拉取或者更新指定镜像。  
+
 5. docker login  
 root@moon:~# docker login  
 Username: username  
@@ -49,6 +51,7 @@ docker images [options "o">] [name]
 
 
 列出本地所有镜像。其中 [name] 对镜像名称进行关键词查询。  
+
 8. docker ps
 
 列出所有运行中容器。
