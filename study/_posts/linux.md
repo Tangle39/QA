@@ -67,7 +67,12 @@ shutdown命令可以**安全地**关闭或重启Linux系统
 使用reboot命令可以快速地关闭系统，但如果还有其它用户在该系统上工作时，就会引起数据的**丢失**。所以使用reboot命令的场合主要是在**单用户**模式。  
 7. 切换目录  
 home:cd ~  
-根目录:cd /
+根目录:cd /  
+8. 帮助类命令  
+ls --help  
+man ls(更详细)  
+9. 重定向 将当前目录的文件存至某一路径：  
+ls >> /Users/lu/Documents/Code/linux/test.txt(>为覆盖；>>追加)
 
 >reference  
 http://ju.outofmemory.cn/entry/337199  
