@@ -39,9 +39,9 @@
 ## 写了shell，怎么运行? 几种方法:  
 
 1. 加执行权限：`chmod +x echo.sh`  
-然后：在目录下`./ echo.sh`  
+然后：在目录下`./ echo.sh`,也可以绝对路径`/.../.../echo.sh`    
 
-2. 调用解释器使得脚本执行：`bash echo.sh`  
+2. 调用解释器使得脚本执行：`bash echo.sh`，或者`sh ./**.sh`  
 
 ## case  
 
