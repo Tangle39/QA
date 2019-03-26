@@ -14,3 +14,5 @@ for n in range(0,10):#从0开始，10个
     print s.Fibonacci(n),  #,使之不换行  py2  ，py3：  end="" 可使输出不换行
 # for n in range(0,10):
 #     print n换行
+l = [1,2,3,4,5]
+print l[-2]
