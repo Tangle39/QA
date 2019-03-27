@@ -15,3 +15,8 @@ class Solution:
 s = Solution()  #()不能省
 b = s.replaceSpace('we are happy')
 print b
+#将**替换为##
+def rep0(str,org,theString):
+    return str.replace(org,theString)
+s = 'we are happy'
+print rep0(s,' ','%20')
