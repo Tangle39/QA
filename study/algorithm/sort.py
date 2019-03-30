@@ -8,7 +8,7 @@ print L
 def qsort(L):   #变量最好小写
 	if len(L) <= 1: return L
 	return qsort([lt for lt in L[1:] if lt < L[0]]) +\
-[L[0]] + qsort([lt for lt in L[1:] if lt >= L[0]])  #\换行 [L[0]]使得变成list;
+	[L[0]] + qsort([lt for lt in L[1:] if lt >= L[0]])  #\换行 [L[0]]使得变成list;
 #  [...]可以使里面的结果形成list！  [...]+[L[0]]+[...]刚好为一次快排
 
 #冒泡
