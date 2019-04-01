@@ -38,6 +38,19 @@ class Solution:
             return
         return l[-k]
 
+    #输入一个链表，反转链表后，输出新链表的表头。
+    def ReverseList(self, pHead):
+        if not  pHead or not pHead.next:
+            return None #检验null
+        pre = None
+        while pHead:
+            next = pHead.next
+            pHead.next =pre
+            pre = pHead
+            pHead=next
+        return pre
+
+
 
 class PrintNode():
     '''
@@ -67,8 +80,10 @@ if __name__ == '__main__':
     printnode = PrintNode()
     printnode.print_node(node1)
     s = Solution()
-    s.delete_node(node4)
-    print 'after delete node,the single linknode is:'
-    printnode.print_node(node1)
+    # s.delete_node(node4)
+    # print 'after delete node,the single linknode is:'
+    #printnode.print_node(node1)
     a = s.FindKthToTail(node1,2)
     print a.num
+    newNode = s.ReverseList(node1)
+    printnode.print_node(newNode)
