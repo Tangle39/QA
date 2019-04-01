@@ -42,7 +42,7 @@ class Solution:
     def ReverseList(self, pHead):
         if not  pHead or not pHead.next:
             return None #检验null
-        pre = None
+        pre = pHead
         while pHead:
             next = pHead.next
             pHead.next =pre
