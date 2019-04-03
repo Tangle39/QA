@@ -25,31 +25,52 @@ class Solution:
     def delete_node(self, node):
         node.num = node.next.num
         node.next = node.next.next
+
     '''
     输出该链表中倒数第k个结点。
     '''
+
     def FindKthToTail(self, head, k):
         # write code here
-        l=[]
-        while head!=None:
+        l = []
+        while head != None:
             l.append(head)
-            head=head.next
-        if k>len(l) or k<1:
+            head = head.next
+        if k > len(l) or k < 1:
             return
         return l[-k]
 
-    #输入一个链表，反转链表后，输出新链表的表头。
+    # 输入一个链表，反转链表后，输出新链表的表头。
     def ReverseList(self, pHead):
-        if not  pHead or not pHead.next:
-            return pHead #检验null
+        if not pHead or not pHead.next:
+            return pHead  # 检验null
         pre = pHead
         while pHead:
             next = pHead.next
-            pHead.next =pre
+            pHead.next = pre
             pre = pHead
-            pHead=next
+            pHead = next
         return pre
 
+    '''
+    输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+    '''
+
+    def Merge(self, pHead1, pHead2):
+        # write code here
+        # 递归出口
+        if not pHead1:
+            return pHead2
+        if not pHead2:
+            return pHead1
+        pMerge = None
+        if pHead1.val < pHead2.val:
+            pMerge = pHead1
+            pMerge.next = self.Merge(pHead1.next, pHead2)
+        else:
+            pMerge = pHead2
+            pMerge.next = self.Merge(pHead1, pHead2.next)
+        return pMerge
 
 
 class PrintNode():
@@ -63,7 +84,6 @@ class PrintNode():
             res_list.append(str(node.num))
             node = node.next
         print '->'.join(res_list)
-
 
 
 if __name__ == '__main__':
@@ -80,10 +100,12 @@ if __name__ == '__main__':
     printnode = PrintNode()
     printnode.print_node(node1)
     s = Solution()
+
+    # test code:
     # s.delete_node(node4)
     # print 'after delete node,the single linknode is:'
-    #printnode.print_node(node1)
-    a = s.FindKthToTail(node1,2)
-    print a.num
-    newNode = s.ReverseList(node1)
-    printnode.print_node(newNode)
+    # printnode.print_node(node1)
+    # a = s.FindKthToTail(node1,2)
+    # print a.num
+    # newNode = s.ReverseList(node1)
+    # printnode.print_node(newNode)

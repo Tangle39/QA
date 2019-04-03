@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-#最大连续子序列和
-l = [-2,11,-4,13,-5,-2,8]
+# 最大连续子序列和
+l = [-2, 11, -4, 13, -5, -2, 8]
 # max = 11-4+13 =20
 '''
 动态规划 复杂度O(n)
@@ -14,10 +14,10 @@ l = [-2,11,-4,13,-5,-2,8]
 从小到大枚举i得dp数组，数组的最大值即为最大连续子序列
 
 '''
-dp=[l[0]]
+dp = [l[0]]
 
-s=l[0]
-for i in range(1,len(l)):
-    tmp=max(l[i],dp[i-1]+l[i])
+s = l[0]
+for i in range(1, len(l)):
+    tmp = max(l[i], dp[i - 1] + l[i])
     dp.append(tmp)
-print max(dp)   #20
+print max(dp)  # 20
