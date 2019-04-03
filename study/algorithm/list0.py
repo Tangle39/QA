@@ -64,7 +64,7 @@ class Solution:
         if not pHead2:
             return pHead1
         pMerge = None
-        if pHead1.val < pHead2.val:
+        if pHead1.num < pHead2.num:
             pMerge = pHead1
             pMerge.next = self.Merge(pHead1.next, pHead2)
         else:
@@ -109,3 +109,12 @@ if __name__ == '__main__':
     # print a.num
     # newNode = s.ReverseList(node1)
     # printnode.print_node(newNode)
+
+    nodeA = Node(1)
+    nodeB = Node(3)
+    nodeC = Node(2)
+    nodeD = Node(4)
+    nodeA.next = nodeB
+    nodeC.next = nodeD
+    nodeE = s.Merge(nodeA,nodeC)
+    printnode.print_node(nodeE)
