@@ -102,6 +102,7 @@ ORDER BY e.emp_no DESC`
 1. 查找最晚入职员工的所有信息  
 `select * from employees where hire_date = (select max(hire_date) from employees)`  
 2. 查找入职员工时间排名倒数第三的员工所有信息  
+limit n,m: 从n+1行开始，共m行
 `select * from employees where hire_date = (select distinct hire_date from employees order by hire_date desc limit 2,1)`  
 3. 查找各个部门当前(to_date='9999-01-01')领导当前薪水详情以及其对应部门编号dept_no  
 `select s.*,d.dept_no from salaries s,dept_manager d where s.to_date = '9999-01-01' and d.to_date = '9999-01-01' and s.emp_no = d.emp_no`  
