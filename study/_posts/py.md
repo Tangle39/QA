@@ -7,9 +7,11 @@ python3 pip install pandas
 3. python -m xxx.py？  
 相当于import,叫做当做模块来启动  
 4. py2和py3的区别  
-* py2: （1）源码重复量多，臃肿。  
-  （2）源码语法不清晰，掺杂着c,php,java的一些陋习  
-  py3:几乎是重构后的源码，规范，清晰，优美  
+* 
+py2: 
+（1）源码重复量多，臃肿。  
+（2）源码语法不清晰，掺杂着c,php,java的一些陋习  
+py3:几乎是重构后的源码，规范，清晰，优美  
 * py2:默认ASKLL编码不能识别中文。文件头需要添加：#-- encoding:utf-8 --  
   py3:默认编码方式就是utf-8  
 * 输入输出  
