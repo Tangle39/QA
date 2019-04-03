@@ -1,5 +1,5 @@
 Jenkins用于持续集成 需要提前安装 JDK 和 Tomcat
-* Tomcar  
+* Tomcat  
 将目录先移动至/Library  
 cd /Library/Tomcat/bin  
 开启：sudo sh ./startup.sh  
