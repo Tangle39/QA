@@ -55,11 +55,15 @@ f(n) =     | 1       ,(n=1 )
 
               | 2*f(n-1),(n>=2)
 '''
+
+
 class Solution:
     def jumpFloorII(self, number):
-        res = [1,1]
+        res = [1, 1]
         for i in range(number):
-            res.append(2*res[-1])
+            res.append(2 * res[-1])
         return res[number]
-s= Solution()
+
+
+s = Solution()
 print s.jumpFloorII(4)

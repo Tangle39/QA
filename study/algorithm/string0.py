@@ -5,12 +5,15 @@
 但是"12e","1a3.14","1.2.3","+-5"和"12e+4.3"都不是。
 '''
 
-#float() 函数用于将整数和字符串转换成浮点数。
+
+# float() 函数用于将整数和字符串转换成浮点数。
 def isNumeric(s):
     try:
-        p= float(s)
+        p = float(s)
         return True
     except:
         return False
-s= raw_input('字符串を输入ください\n') #输入字符串
+
+
+s = raw_input('字符串を输入ください\n')  # 输入字符串
 print isNumeric(s)

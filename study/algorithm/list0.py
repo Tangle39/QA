@@ -116,5 +116,5 @@ if __name__ == '__main__':
     nodeD = Node(4)
     nodeA.next = nodeB
     nodeC.next = nodeD
-    nodeE = s.Merge(nodeA,nodeC)
+    nodeE = s.Merge(nodeA, nodeC)
     printnode.print_node(nodeE)

@@ -1,20 +1,22 @@
 # -*- coding:utf-8 -*-
-#输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
+# 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
-class Solution:
 
+class Solution:
     def printListFromTailToHead(self, listNode):
         # write code here
         l = []
         head = listNode
         while head:
-            l.insert(0, head.val) #利用insert(0,val)一直在头部插入
+            l.insert(0, head.val)  # 利用insert(0,val)一直在头部插入
             head = head.next
         return l
+
+
 print 'ok'
 node1 = ListNode(90)
 node2 = ListNode(34)

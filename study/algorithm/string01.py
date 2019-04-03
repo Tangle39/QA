@@ -6,7 +6,8 @@
 输出描述:
 如果当前字符流没有存在出现一次的字符，返回#字符。
 '''
-# -*- coding:utf-8 -*-
+
+
 
 
 
@@ -27,6 +28,7 @@ class Solution:
 
     def Insert(self, char):
         self.s += char
+
 
 a = Solution()
 a.Insert('lglg')
