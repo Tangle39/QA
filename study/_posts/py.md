@@ -16,3 +16,5 @@ python3 pip install pandas
 * Unicode 字符串：在Python3中，所有的字符串都是Unicode字符串。  
    py2：在字符串前面加上前缀 u  
 * Python 3.x已经改进了整数的除法运算，“/”除将得到浮点数，“//”除才仍是整数。
+5. pycharm优化代码格式：
+Code→Reformmat code（快捷键option+command+L）
