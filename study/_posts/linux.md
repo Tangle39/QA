@@ -72,7 +72,9 @@ home:cd ~
 ls --help  
 man ls(更详细)  
 9. 重定向 将当前目录的文件存至某一路径：  
-ls >> /Users/lu/Documents/Code/linux/test.txt(>为覆盖；>>追加)
+ls >> /Users/lu/Documents/Code/linux/test.txt(>为覆盖；>>追加)  
+10. 列出当前目录以及子目录下所有扩展名为“.txt”的文件  
+find . -name "\*.txt"  
 
 >reference  
 http://ju.outofmemory.cn/entry/337199  
