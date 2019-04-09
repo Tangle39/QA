@@ -85,6 +85,7 @@ CREATE TABLE \`salaries\` (
 `from_date` date NOT NULL,  
 `to_date` date NOT NULL,  
 PRIMARY KEY (`emp_no`,`from_date`));    
+
 CREATE TABLE `dept_manager` (  
 `dept_no` char(4) NOT NULL,  
 `emp_no` int(11) NOT NULL,  
@@ -107,8 +108,10 @@ PRIMARY KEY (`emp_no`,`dept_no`));
 2. 查找入职员工时间排名倒数第三的员工所有信息  
 limit n,m: 从n+1行开始，共m行  
 `select * from employees where hire_date = (select distinct hire_date from employees order by hire_date desc limit 2,1)`  
+
 3. 查找各个部门当前(to_date='9999-01-01')领导当前薪水详情以及其对应部门编号dept_no  
 `select s.*,d.dept_no from salaries s,dept_manager d where s.to_date = '9999-01-01' and d.to_date = '9999-01-01' and s.emp_no = d.emp_no`  
+
 4. 查找所有已经分配部门的员工的last_name和first_name  
 `SELECT e.last_name, e.first_name, d.dept_no
 FROM dept_emp d NATURAL JOIN employees e;`  
@@ -134,6 +137,13 @@ ORDER BY e.emp_no DESC`
 `1. select salary from salaries  where to_date='9999-01-01' group by salary order by salary desc;`  
 `2. SELECT DISTINCT salary FROM salaries WHERE to_date = '9999-01-01' ORDER BY salary DESC`  
 在不同记录数较小时，count group by性能普遍高于count distinct
+
+9. 获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date='9999-01-01'
+`SELECT d.dept_no, d.emp_no, s.salary 
+FROM salaries AS s INNER JOIN dept_manager AS d 
+ON d.emp_no = s.emp_no
+AND d.to_date = '9999-01-01'
+AND s.to_date = '9999-01-01'`
 
 >from  
 https://www.nowcoder.com/ta/sql  
