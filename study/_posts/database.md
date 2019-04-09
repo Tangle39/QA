@@ -138,7 +138,7 @@ ORDER BY e.emp_no DESC`
 `2. SELECT DISTINCT salary FROM salaries WHERE to_date = '9999-01-01' ORDER BY salary DESC`  
 在不同记录数较小时，count group by性能普遍高于count distinct
 
-9. 获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date='9999-01-01'
+9. 获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date='9999-01-01'  
 `SELECT d.dept_no, d.emp_no, s.salary 
 FROM salaries AS s INNER JOIN dept_manager AS d 
 ON d.emp_no = s.emp_no
