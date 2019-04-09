@@ -33,7 +33,7 @@ class Solution:
     def FindKthToTail(self, head, k):
         # write code here
         l = []
-        while head != None:
+        while head is not None:
             l.append(head)
             head = head.next
         if k > len(l) or k < 1:
@@ -104,17 +104,17 @@ if __name__ == '__main__':
     # test code:
     # s.delete_node(node4)
     # print 'after delete node,the single linknode is:'
-    # printnode.print_node(node1)
-    # a = s.FindKthToTail(node1,2)
-    # print a.num
+    printnode.print_node(node1)
+    a = s.FindKthToTail(node1,2)
+    print a.num
     # newNode = s.ReverseList(node1)
     # printnode.print_node(newNode)
 
-    nodeA = Node(1)
-    nodeB = Node(3)
-    nodeC = Node(2)
-    nodeD = Node(4)
-    nodeA.next = nodeB
-    nodeC.next = nodeD
-    nodeE = s.Merge(nodeA, nodeC)
-    printnode.print_node(nodeE)
+    # nodeA = Node(1)
+    # nodeB = Node(3)
+    # nodeC = Node(2)
+    # nodeD = Node(4)
+    # nodeA.next = nodeB
+    # nodeC.next = nodeD
+    # nodeE = s.Merge(nodeA, nodeC)
+    # printnode.print_node(nodeE)
