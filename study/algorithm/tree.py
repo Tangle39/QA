@@ -62,7 +62,7 @@ class Solution:
             return False
         return self.is_subtree(A.left, B.left) and self.is_subtree(A.right, B.right)
 
-    #层序遍历
+    # 层序遍历
     '''
     要用队列来实现。
     1. 把根节点入队列
@@ -70,6 +70,7 @@ class Solution:
     3. 把根节点的左右孩子入队列
     然而这里不但要层次遍历，而且要按层输出，于是再增加一个list作为每一层的节点，正好队列的长度就是每一层的元素个数。
     '''
+
     def levelOrder(self, root):
         """
         :type root: TreeNode
@@ -94,6 +95,14 @@ class Solution:
             result.append(singleLevel)
         return result
 
+    # 操作给定的二叉树，将其变换为源二叉树的镜像。
+    def Mirror(self, root):
+        # write code here
+        if root is not None:  #根绝ide建议，is not比!= 好
+            root.left, root.right = root.right, root.left
+            self.Mirror(root.left)
+            self.Mirror(root.right)
+
 
 # def preTr(root):
 #
@@ -105,7 +114,7 @@ class Solution:
 
 s = Solution()
 
-#test codes:
+# test codes:
 # pre = [1, 2, 4, 7, 3, 5, 6, 8]
 # tin = [4, 7, 2, 1, 5, 3, 8, 6]
 # r = s.reConstructBinaryTree(pre, tin)
@@ -125,12 +134,18 @@ a1.right = a3
 a2.left = a4
 a2.right = a5
 
-b1 = TreeNode(1)
-b2 = TreeNode(2)
-b3 = TreeNode(3)
-b1.left = b2
-b1.right = b3
+# b1 = TreeNode(1)
+# b2 = TreeNode(2)
+# b3 = TreeNode(3)
+# b1.left = b2
+# b1.right = b3
+
 # print a2.right.val == a5.val
 # print s.HasSubtree(a1, b2)
+# print s.levelOrder(a1)
+# print len([a1])
 print s.levelOrder(a1)
-print len([a1])
+s.Mirror(a1)
+print s.levelOrder(a1)
+s.Mirror(None)
+print s.levelOrder(None)
