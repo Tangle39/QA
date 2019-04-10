@@ -80,7 +80,7 @@ ls >> /Users/lu/Documents/Code/linux/test.txt(>为覆盖；>>追加)
 find . -name "\*.txt"  
 11. 利用管道符计算1+2+3+...+100的值
 echo {1..100} |tr ' ' '+'| bc   
-# tr:替换，   bc：linux计算器  
+\# tr:替换，   bc：linux计算器  
 
 
 >reference  
