@@ -19,7 +19,7 @@ class BaiduTest(unittest.TestCase):
         driver.find_element_by_id("kw").clear()   #百度页面的id为kw
         driver.find_element_by_id("kw").send_keys("unittest")
         driver.find_element_by_id("su").click()
-        time.sleep(3)
+        time.sleep(5)
         title = driver.title   #浏览器标题
         self.assertEqual(title, u"unittest_百度搜索") #check
 
