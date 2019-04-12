@@ -7,3 +7,8 @@ Java 提供了一种对象序列化的机制，该机制中，一个对象可以
 该类必须实现 java.io.Serializable 对象。
 
 该类的所有属性必须是可序列化的。
+
+# Java数组
+复制的效率System.arraycopy>clone>Arrays.copyOf>for循环  
+# Java修饰符  
+静态变量只能在类主体中定义，不能在方法中定义  
