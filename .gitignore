@@ -11,3 +11,4 @@
 
 
 *.class
+*.kotlin_module
