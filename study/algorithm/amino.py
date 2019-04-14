@@ -1,9 +1,9 @@
-# -*- coding:utf-8 -*-
-# py 2.7.14
+# py 2.7.14,author = Tangle'
 import socket
 
 
 def valid(str):
+    if not str: return 0
     clean = ' '.join(str.split())
     for i in range(1, len(clean)):
         if clean[i] == ' ':
@@ -14,20 +14,16 @@ def valid(str):
 
 def check_input(string):
     string = string.replace(' ', '')
-    # print 'error'
+
     return string
 
 
-ip_addr = '172.     1 68.5.1'
+def conver_ip(ip_addr):
+    if not valid(ip_addr):
+        return 'error!'
+    else:
+        ip_addr = check_input(ip_addr)
 
-# print ' '.join(ip_addr.split())
+    packed_ip_addr = int(socket.inet_aton(ip_addr).encode('hex'), 16)
 
-if not valid(ip_addr):
-    print 'error!'
-else:
-    ip_addr = check_input(ip_addr)
-    # packed_ip_addr = socket.inet_aton(ip_addr)
-
-    packed_ip_addr = int(socket.inet_aton(ip_addr).encode('hex'), 16)  # inet_aton转换
-
-    print packed_ip_addr
+    return packed_ip_addr
