@@ -7,7 +7,7 @@ class TreeNode:
 
 
 class Solution:
-    def reConstructBinaryTree(self, pre, tin):# 通过中序和某一个序可以重建，中序是必要的
+    def reConstructBinaryTree(self, pre, tin):  # 通过中序和某一个序可以重建，中序是必要的
 
         '''  emmm这个也得有table 不然会报错
         输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
@@ -95,10 +95,29 @@ class Solution:
             result.append(singleLevel)
         return result
 
+    # 直接list的层序
+    def PrintFromTopToBottom(self, root):
+        # write code here
+        if not root:
+            return []
+        queue = []
+        result = []
+
+        queue.append(root)
+        while len(queue) > 0:
+            node = queue.pop(0)
+            result.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        return result
+
     # 操作给定的二叉树，将其变换为源二叉树的镜像。
     def Mirror(self, root):
         # write code here
-        if root is not None:  #根绝ide建议，is not比!= 好
+        if root is not None:  # 根绝ide建议，is not比!= 好
             root.left, root.right = root.right, root.left
             self.Mirror(root.left)
             self.Mirror(root.right)
@@ -133,6 +152,8 @@ a1.left = a2
 a1.right = a3
 a2.left = a4
 a2.right = a5
+a6 = TreeNode(6)
+a3.right = a6
 
 # b1 = TreeNode(1)
 # b2 = TreeNode(2)
@@ -149,3 +170,4 @@ s.Mirror(a1)
 print s.levelOrder(a1)
 s.Mirror(None)
 print s.levelOrder(None)
+print s.PrintFromTopToBottom(a1)
