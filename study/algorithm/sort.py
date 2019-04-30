@@ -8,7 +8,7 @@ print L
 
 
 def qsort(L):  # 变量最好小写
-    if len(L) <= 1: return L
+    if len(L) <= 1: return L       #递归出口！
     return qsort([lt for lt in L[1:] if lt < L[0]]) + \
            [L[0]] + qsort([lt for lt in L[1:] if lt >= L[0]])  # \换行 [L[0]]使得变成list;
 
@@ -26,7 +26,7 @@ def bubble_sort(L):
     return L
 
 
-# print bubble_sort(L)
+#print bubble_sort(L)
 
 # print L
 print qsort(L)
