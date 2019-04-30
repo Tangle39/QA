@@ -127,6 +127,7 @@ from employees e left join dept_emp d on e.emp_no=d.emp_no`
 `SELECT e.emp_no, s.salary FROM employees AS e, salaries AS s  
 WHERE e.emp_no = s.emp_no AND e.hire_date = s.from_date  
 ORDER BY e.emp_no DESC`  
+
 7. 查找薪水涨幅超过15次的员工号emp_no以及其对应的涨幅次数t  
 * 分析：  
 1、用COUNT()函数和GROUP BY语句可以统计同一emp_no值的记录条数  
