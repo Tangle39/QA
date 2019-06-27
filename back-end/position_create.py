@@ -18,7 +18,7 @@ def create_position():
     }
 
     url = 'https://bot.****.ifchange.com/api/dhr_manager/positions/create'
-    r = requests.post(url, json=data, verify=False)
+    r = requests.post(url, json=data, verify=False)   #verify=False不一定需要
     print(r.text)
 
 
