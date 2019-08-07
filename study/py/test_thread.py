@@ -26,7 +26,7 @@ class Foo:
         self.s2 = Semaphore(0)
         self.s3 = Semaphore(0)
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst):
     # 每调用一次acquire()，计数器减1；每调用一次release()，计数器加1,当计数器为0时，acquire()调用被阻塞。
     # printFirst() outputs "first". Do not change or remove this line.
         self.s1.acquire()
@@ -34,7 +34,7 @@ class Foo:
         self.s2.release()
 
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond):
 
 # printSecond() outputs "second". Do not change or remove this line.
         self.s2.acquire()
@@ -42,7 +42,7 @@ class Foo:
         self.s3.release()
 
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird):
 
 # printThird() outputs "third". Do not change or remove this line.
         self.s3.acquire()
