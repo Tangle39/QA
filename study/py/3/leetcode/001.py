@@ -6,10 +6,11 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        data = {}  # 字典
+        data = {}  # 字典hashmap
         res = []
-        for index, value in enumerate(nums): #可以用它list（enumerate（t))打印
-            data[value] = index  #存字典
+        for index, value in enumerate(nums): #可以用它list（enumerate（t))打印  enumerate(sequence, [start=0])
+            data[value] = index  #存字典 后面会被覆盖？
+            print(data)
             if target - value in data:  # 利用字典以及enumerate巧妙得出res ；字典只有key做判断
                 res.append([data[target - value], index])  # 重复的也能统计
         return res
