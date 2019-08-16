@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#装饰器回顾19-8-16
 '''ef say_hello():
     print "hello!"
 
@@ -37,7 +38,8 @@ def debug(func):
         return func()
     return wrapper
 
-@debug
+#@符号是装饰器的语法糖，在定义函数的时候使用，避免再一次赋值操作
+@debug  #即say_hello = debug(say_hello)
 def say_hello():
     print "hello!"
 @debug
@@ -49,3 +51,13 @@ say_hello()
 
 
 say_gun()
+
+def decorator(f):   #装饰器decorator
+    def wrapper(x,y): #可调用对象
+        return x+y
+    return wrapper
+
+@decorator
+def func(x,y):   #被装饰对象
+    return 1
+print func(3,4)  # >>7
