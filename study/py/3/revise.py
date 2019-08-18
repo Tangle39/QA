@@ -4,8 +4,10 @@ def qsort(l):
     if len(l)<= 1:
         return l
     else:
+        #带过滤功能的列表生成式
         return qsort([x for x in l[1:] if x <= l[0]])+[l[0]]+qsort([x for x in l[1:] if x >l[0]]) # 对list的理解  array slice
 l=[5,4,3,2]
+
 print(qsort(l))
 my_string = 'sakupopo'
 k = [print(i) for i in my_string if i not in "aeiou"]#print(i) is executed if the given character is not a vowel.
