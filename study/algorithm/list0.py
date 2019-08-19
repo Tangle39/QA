@@ -72,6 +72,10 @@ class Solution:
             pMerge.next = self.Merge(pHead1, pHead2.next)
         return pMerge
 
+    #插入节点
+    
+
+
 
 class PrintNode():
     '''

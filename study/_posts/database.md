@@ -51,7 +51,7 @@ SQL注入，就是通过把SQL命令插入到Web表单递交或输入域名或�
 
 # 关键字  
 INNER JOIN  
-在表中存在至少一个匹配时，INNER JOIN 关键字返回行。(=JOIN)
+在表中存在至少一个匹配时，INNER JOIN 关键字返回行。(=JOIN)  
 LEFT JOIN   
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。  
 natural join  
