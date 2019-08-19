@@ -11,4 +11,8 @@
 # l=[1,2]
 # l.reverse()
 # print(l)
-print(type(bin(5)))
+# print(type(bin(5)))
+# for i in range(5):
+#     print(i)
+#print([0 for _ in range(5)])
+print(max([0,0]))
