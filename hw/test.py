@@ -15,4 +15,8 @@ print(reversed('saaaa'))
 # for i in range(5):
 #     print(i)
 #print([0 for _ in range(5)])
-print(max([0,0]))
+#print(max([0,0]))
+l = [1,2,2]
+b = set(l)
+print(list(b))
+for i in range(100):print(i)

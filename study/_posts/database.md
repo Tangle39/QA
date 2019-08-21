@@ -1,3 +1,5 @@
+进入本机数据库：  
+/usr/local/MySQL/bin/mysql -u root -p  
 # 事务(Transaction)四大特性  
 原子性，要么执行，要么不执行  
 隔离性，所有操作全部执行完以前其它会话不能看到过程  
@@ -145,6 +147,21 @@ FROM salaries AS s INNER JOIN dept_manager AS d
 ON d.emp_no = s.emp_no
 AND d.to_date = '9999-01-01'
 AND s.to_date = '9999-01-01'`
+
+10. WITH ROLLUP 可以实现在分组统计数据基础上再进行相同的统计（SUM,AVG,COUNT…）。
+如我们将以上的数据表按名字进行分组，再统计每个人登录的次数：  
+SELECT name, SUM(singin) as singin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;  
++----+--------+---------------------+--------+
+| id | name   | date                | singin |
++----+--------+---------------------+--------+
+|  1 | 小明 | 2016-04-22 15:25:33 |      1 |  
+|  2 | 小王 | 2016-04-20 15:25:47 |      3 |  
+|  3 | 小丽 | 2016-04-19 15:26:02 |      2 |  
+|  4 | 小王 | 2016-04-07 15:26:14 |      4 |  
+|  5 | 小明 | 2016-04-11 15:26:40 |      4 |  
+|  6 | 小明 | 2016-04-04 15:26:54 |      2 |  
++----+--------+---------------------+--------+
+
 
 >from  
 https://www.nowcoder.com/ta/sql  
