@@ -1,5 +1,5 @@
 # 统计日志文件error的数量
-with open('/Users/lu/Documents/Code/QA/study/py/3/test.log') as f:
+with open('/Users/lu/Documents/Code/QA/py3/test.log') as f:
     # 用with语句的好处，就是到达语句末尾时，会自动关闭文件，即便出现异常。
     a = f.read()
     '''
@@ -13,7 +13,7 @@ with open('/Users/lu/Documents/Code/QA/study/py/3/test.log') as f:
     s = a.count('error')
     print(s)
 
-with open('/Users/lu/Documents/Code/QA/study/py/3/test.log') as f:
+with open('/Users/lu/Documents/Code/QA/py3/test.log') as f:
     s = 0
     for line in f.readlines():
         s += line.count('error')
