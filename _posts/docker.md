@@ -1,3 +1,11 @@
+# 为什么使用微服务
+单体应用随着发展变成巨型应用，扩展十分艰难，使用微服务解决其复杂性  
+优点：  
+* 解决复杂性问题
+* 使得每个服务可以被独立地开发
+* 每个微服务可以独立部署
+* 每个服务独立扩展
+
 # what is  
 Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。
 
@@ -55,3 +63,16 @@ docker images [options "o">] [name]
 8. docker ps
 
 列出所有运行中容器。
+
+# k8s
+对Docker及容器进行更高级更灵活的管理，是基于容器的集群管理平台，它的全称，是kubernetes。  
+一个K8S系统，通常称为一个K8S集群（Cluster）。  
+主要包括两个部分：
+
+* 一个Master节点（主节点）
+* 一群Node节点（计算节点）
+Master节点包括API Server、Scheduler、Controller manager、etcd。  
+Node节点包括Docker、kubelet、kube-proxy、Fluentd、kube-dns（可选），还有就是Pod。  
+
+# SpringCloud
+spring cloud 为开发人员提供了快速构建分布式系统的一些工具，包括配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等等  
