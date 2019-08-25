@@ -89,4 +89,4 @@ Eureka Server：注册中心，里面有一个注册表，保存了各个服务�
 发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题  
 * Spring Cloud核心组件：Zuul
 如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务  
-![https://github.com/entangle1993/QA/blob/master/image/sc.jpg]
+!(https://github.com/entangle1993/QA/blob/master/image/sc.jpg)
