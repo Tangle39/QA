@@ -17,3 +17,4 @@ def lengthOfLongestSubstring(s: str) -> int:
         lookup.add(s[i])
     return max_len
 print(lengthOfLongestSubstring('abcdd'))
+
