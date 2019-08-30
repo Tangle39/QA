@@ -103,6 +103,10 @@ echo {1..100} |tr ' ' '+'| bc
 \# tr:替换，   bc：linux计算器  
 
 
+## 0830
+### ls
+ls >c 会__先__生成c文件
+
 >reference  
 http://ju.outofmemory.cn/entry/337199  
 https://www.cnblogs.com/shishanyu/p/7966975.html
