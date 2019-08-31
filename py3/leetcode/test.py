@@ -13,14 +13,19 @@
 # W =[5]*6
 # W[1]=4
 # print(W)
-print(-int('12'))
-print(*[1], *[2], 3)
-print([1,2],[2],3)
-
-l=['12']
-b = int(*l)
-c = l[0]
-
-print(b+6)
-print(b+6== 6+int(c))
-print(*l)
+# print(-int('12'))
+# print(*[1], *[2], 3)
+# print([1,2],[2],3)
+#
+# l=['12']
+# b = int(*l)
+# c = l[0]
+#
+# print(b+6)
+# print(b+6== 6+int(c))
+# print(*l)
+#
+# print(5%2)
+#
+# dict3 = {(1,2,3): "uestc"}
+print('\\123456\123456\t')    # >>\123456S456
