@@ -29,3 +29,4 @@ import math
 # print(n)
 print(r"\nwoow")
 print(math.floor(5.5))
+print(1.2-1.0==0.2)

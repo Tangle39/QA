@@ -150,6 +150,11 @@ sort demo.txt|uniq
 * who 
 查看登陆者信息，如果在自己mac查看，至少有console和tty
 
+* wtmp
+/var/log/wtmp也是一个二进制文件，记录每个用户的登录次数和持续时间等信息  
+可以用last命令输出当中内容
+
+
 >reference  
 http://ju.outofmemory.cn/entry/337199  
 https://www.cnblogs.com/shishanyu/p/7966975.html

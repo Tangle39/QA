@@ -28,4 +28,9 @@
 # print(5%2)
 #
 # dict3 = {(1,2,3): "uestc"}
-print('\\123456\123456\t')    # >>\123456S456
+# print('\\123456\123456\t')    # >>\123456S456
+# print(["%02d:%02d"%(h,m) for h in range(0, 24) for m in range(0, 60, 5)])
+l =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print([x for x in l if x%2 ==1])
+add=lambda x, y: x+y
+print(add(1,2))
