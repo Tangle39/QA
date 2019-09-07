@@ -27,6 +27,7 @@ import math
 # print(n)
 # n.extend([1,2])
 # print(n)
-print(r"\nwoow")
-print(math.floor(5.5))
-print(1.2-1.0==0.2)
+# print(r"\nwoow")
+# print(math.floor(5.5))
+# print(1.2-1.0==0.2)
+print(i*i for i in range(10))  #生成器
