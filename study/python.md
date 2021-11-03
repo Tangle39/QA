@@ -511,7 +511,7 @@ class RAW_DEV(BaseDevice):
     apptype = 3
 
     def __init__(self, name, id):
-        super().__init__(name, id)  # 在单类继承中,不需要父类的名称来调用父类的函数
+        super().__init__(name, id)  # 在单类继承中,不需要父类的名称来调用父类的函数(super用来调父类)
 
 
 r = RSSP1_DEV('rssp', 0xA)
@@ -548,6 +548,98 @@ if __name__ == '__main__':
 property使用场景：1.修饰方法，使方法可以像属性一样访问。调用时不用括号
 
 2.与所定义的属性配合使用，这样可以防止属性被修改
+
+## 嵌套类 nested class
+
+嵌套类（也叫内类）是在另一个类中定义的。它并不能提高执行时间，但可以通过将相关的类归为一组来帮助程序的可读性和维护，而且还可以将嵌套类隐藏起来，不让外界看到。
+
+```python
+class Dept:
+    def __init__(self, dname):
+        self.dname = dname
+
+    class Prof:
+        def __init__(self, pname):
+            self.pname = pname
+
+math = Dept("Mathematics")
+mathprof = Dept.Prof("Mark")
+
+print(math.dname)
+print(mathprof.pname)
+'''
+out:
+Mathematics
+Mark
+'''
+```
+
+## descriptor
+
+如果一个新式类定义了`__get__`, `__set__`,` __delete__`方法中的一个或者多个，那么称之为descriptor
+
+* Dynamic lookups
+
+```python
+# python 2.7
+import os
+
+
+class DirectorySize(object):
+    def __get__(self, obj, objtype=None):
+        return len(os.listdir(obj.dirname))
+
+
+class Directory:
+    size = DirectorySize()  # Descriptor instance
+
+    def __init__(self, dirname):
+        self.dirname = dirname  # Regular instance attribute
+
+
+def main():
+    s = Directory('song')
+    print s.size
+    g = Directory('game')
+    print g.size
+
+
+if __name__ == '__main__':
+    main()
+#  File count is automatically updated according to folder and file numbers
+```
+
+## override
+
+如果需要子类使用某方法必须重新自己实现时，子类override，父类使用exception
+
+```python
+# python 2.7
+
+
+class A(object):
+    def test(self):
+        """
+        Main test method that should be overridden by child classes.
+        """
+        raise NotImplementedError("Test function needs overridden for each test.")
+
+
+class B(A):
+    def test(self):
+        # pass
+        print 'yes i have implemented this method'
+
+
+def main():
+    b = B()
+
+    b.test()
+# 如果B未实现test，则报错
+
+if __name__ == '__main__':
+    main()
+```
 
 # 算法
 
@@ -647,48 +739,6 @@ def canJump(nums: List[int]) -> bool:
         k = max(k, i + j)
     return True
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
