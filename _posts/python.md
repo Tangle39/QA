@@ -1,7 +1,5 @@
 
 
-
-
 # 目录
 
 [TOC]
@@ -17,6 +15,7 @@
 for可以有两个来构成循环,详见[product](#product)
 
 ```python
+# if no annotation, use python 3
 # 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。答案可以按 任意顺序 返回。
 def letterCombinations(digits: str) -> list:
     KEY = {'2': ['a', 'b', 'c'],
@@ -53,6 +52,8 @@ c.keys()  # 此时的类型为dict_keys，可以用list()等进行转换
 c.values()
 ```
 
+
+
 # 内建函数
 
 实用内建函数
@@ -76,10 +77,20 @@ print('{:.2%}'.format(0.6667)
 
 输出百分比，保留两位小数
 
-## float
+‘:’用来指定各种格式
 
 ```python
-print(float(num))
+print("------Script: {:<3}.py ------".format('sa'))
+# 长度大于等于3，否则以空白补齐
+print("{:x}".format(16)) # 16进制
+```
+
+## 数字相关
+
+### float
+
+```python
+print(float(num))  # 3.6e-3 和'3.6e-3'都可以
 ```
 
 返回一个**十进制浮点型数值（小数）**。
@@ -91,7 +102,7 @@ float()括号内可以是三种类型的数据：
 
 特别的，`'inf'`或者`'Infinity'`表示无穷大
 
-## hex
+### hex
 
 ```python
 print(int(num))   # 转成10进制,等同于print(num)
@@ -153,7 +164,40 @@ matrix[:] = map(list, zip(*matrix))  # [:]有隐形转换
 # [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
 
+## 类相关
+
+### setattr
+
+用于设置属性值，该属性不一定是存在的
+
+### hasattr
+
+用于判断对象是否包含对应的属性，有该属性返回 True，否则返回 False。
+
+由`getattr`和exception实现
+
+```python
+class A(object):
+    b = 6
+
+
+def main():
+    a = A()
+    setattr(a, 'c', 7)
+    a.d = 8
+    print a.c, a.d  # 7 8
+    print hasattr(a, 'd') # True
+```
+
 [返回目录](#目录)
+
+# 命名空间
+
+**命名空间是对变量名的分组划分**。
+
+LEGB规定了查找一个名称的顺序为：local-->enclosing function locals-->global-->builtin
+
+通过把一些模块进行加载和重命名(库中的类)操作，可以加快查找速度？
 
 # 常用模块
 
@@ -246,6 +290,19 @@ t = threading.Thread(group=None, target=None, name=None,
 
 ```python
 t.start()
+```
+
+# multiprocessing
+
+多进程
+
+```python
+import multiprocessing
+import os
+def saku1():
+    print('saku1 is called,pid is {}'.format(os.getpid()))
+p2 = multiprocessing.Process(target=saku1)   
+p2.start()  # 不能直接用run，是假的多进程，几个函数的pid会相同
 ```
 
 ### daemon
@@ -405,6 +462,20 @@ print(u)
 
 python里gc.collect()命令可以回收没有被使用的空间，但是这个命令还会返回一个数值，是清除掉的垃圾变量的个数
 
+## random
+
+```python
+import random
+
+
+def main():
+    l = [1, 2, 3, 4, 5]
+    random.shuffle(l)  # 将l中的元素打乱
+    print(l)
+```
+
+[↑top](#目录)
+
 # 语法解析
 
 1.  a,b = b,a是怎么实现的
@@ -473,7 +544,14 @@ try:
     pass
 except:
     pass
+finally:
+    pass
+    # finally中的语句一定会被执行
 ```
+
+assert:用于判断一个表达式，在表达式条件为 false 的时候触发异常。
+
+例如`assert 0`就会触发异常
 
 # 类
 
@@ -520,7 +598,7 @@ print(r.maxQueueSize)
 ra = RAW_DEV('raw', 2001)
 ra.get_device_id()
 ```
-
+## property
 ```python
 class BaseDevice():
     _deviceName: str = None  # 保护变量，只能自己或子类使用
@@ -548,6 +626,30 @@ if __name__ == '__main__':
 property使用场景：1.修饰方法，使方法可以像属性一样访问。调用时不用括号
 
 2.与所定义的属性配合使用，这样可以防止属性被修改
+
+property相当于getter，还可以用setter装饰器，对setter进行设置
+
+```python
+# python 2.7
+class Geeks(object):
+    def __init__(self):
+        self._age = 0
+
+    # using property decorator
+    # a getter function
+    @property
+    def age(self):
+        print("getter method called")
+        return self._age
+
+    # a setter function
+    @age.setter
+    def age(self, a):
+        if (a < 18):
+            raise ValueError("Sorry you age is below eligibility criteria")
+        print("setter method called")
+        self._age = a
+```
 
 ## 嵌套类 nested class
 
