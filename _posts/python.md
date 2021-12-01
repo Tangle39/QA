@@ -110,7 +110,7 @@ print(hex(num))  # 转成16进制
 print(bin(num))  # 转成2进制
 # num遵循python数字表示法即可
 # int还可以将字符串转换成整型:
-class int(x, base=10)
+int('0xA',0)  # 10
 ```
 
 ## enumerate
