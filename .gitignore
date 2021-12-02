@@ -1,4 +1,3 @@
-
 *.iml
 *.xml
 *.pyc
@@ -8,7 +7,4 @@
 *.pbxproj
 *.xcbkptlist
 *.DS_Store
-
-
-*.class
 *.kotlin_module
