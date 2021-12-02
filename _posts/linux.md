@@ -1,3 +1,7 @@
+# 目录
+
+[TOC]
+
 # linux开机过程
 
 1. 加载BIOS（Basic Input Output System）  
