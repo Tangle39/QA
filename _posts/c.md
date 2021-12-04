@@ -595,13 +595,13 @@ STATUS semTake(SEM_ID semID,int timeout);
 STATUS semGive(SEM_ID semID);
 ```
 
-![image-20210706143457074](E:\Users\Lu\合图\study\image-20210706143457074.png)
+![image-20210706143457074](image-20210706143457074.png)
 
 
 <center>semTake</center>
 
 
-![image-20210706143610764](E:\Users\Lu\合图\study\image-20210706143610764.png)
+![image-20210706143610764](image-20210706143610764.png)
 
 <center>semGive</center>
 
