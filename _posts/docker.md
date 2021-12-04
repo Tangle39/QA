@@ -60,9 +60,29 @@ docker images [options "o">] [name]
 
 列出本地所有镜像。其中 [name] 对镜像名称进行关键词查询。  
 
-8. docker ps
+## docker ps
 
 列出所有运行中容器。
+
+## 进入容器内的 Linux 的交互命令行
+
+**docker exec ：**在运行的容器中执行命令
+
+* **-i :**即使没有附加也保持STDIN 打开(Keep STDIN open even if not attached)
+
+* **-t :**分配一个伪终端
+
+1. 先使用`dock ps`查看容器ID
+
+2. 默认用户进入：`docker exec -it '容器ID' /bin/bash`
+
+   容器ID无需打完整，可以识别即可
+
+3. root进入：`docker exec -u root -it '容器ID' /bin/bash`
+
+4. 退出: `exit`
+
+   
 
 # k8s
 对Docker及容器进行更高级更灵活的管理，是基于容器的集群管理平台，它的全称，是kubernetes。  
