@@ -8,3 +8,4 @@
 *.xcbkptlist
 *.DS_Store
 *.kotlin_module
+*.class
