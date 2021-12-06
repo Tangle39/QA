@@ -292,7 +292,17 @@ t = threading.Thread(group=None, target=None, name=None,
 t.start()
 ```
 
-# multiprocessing
+### daemon
+
+设置线程为守护线程
+
+```python
+t.setDaemon(True)  # 设置必须要在start之前
+```
+
+主线程为非守护线程(前台线程)，当前台线程结束时，守护线程也会结束
+
+## multiprocessing
 
 多进程
 
@@ -304,16 +314,6 @@ def saku1():
 p2 = multiprocessing.Process(target=saku1)   
 p2.start()  # 不能直接用run，是假的多进程，几个函数的pid会相同
 ```
-
-### daemon
-
-设置线程为守护线程
-
-```python
-t.setDaemon(True)  # 设置必须要在start之前
-```
-
-主线程为非守护线程(前台线程)，当前台线程结束时，守护线程也会结束
 
 ## queue
 
