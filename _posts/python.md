@@ -496,6 +496,12 @@ print(s.size)
 print(u)
 #12 会有字节对齐
 #(1, b'abc', 2.700000047683716)
+
+#python 2
+def main():
+    s = struct.pack('<I', 0xFFAA)
+    s = struct.unpack('<I', s)
+    print "0x{:X}".format(s[0])  # 如果指定大小端，就都指定，不然就可能会发生错误
 ```
 
 ## gc
