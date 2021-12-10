@@ -185,6 +185,14 @@ tail -n +100 filename
 - -f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。
 - -r 将目录及以下之档案亦逐一删除。
 
+## scp
+
+用于 Linux 之间复制文件和目录
+
+```shell
+scp [可选参数] file_source file_target 
+```
+
 ## 其他
 
 * df
