@@ -197,17 +197,28 @@ scp [可选参数] file_source file_target
 
 * df
   检查linux服务器的文件系统的磁盘空间占用情况
+  
 * du
   显示每个文件和目录的磁盘使用空间。
+  
 * 先排序，后去重(因为 uniq 只能处理邻接的行)
   `sort demo.txt | uniq`
+  
 * uptime
   打印系统总共运行了多长时间和系统的平均负载。uptime命令可以显示的信息显示依次为：现在时间、系统已经运行了多长时间、目前有多少登陆用户、系统在过去的**1分钟、5分钟和15分钟**内的平均负载。
+  
 * who 
   查看登陆者信息，如果在自己mac查看，至少有console和tty
+  
 * wtmp
   /var/log/wtmp也是一个二进制文件，记录每个用户的登录次数和持续时间等信息  
   可以用last命令输出当中内容
+  
+* 立即关机
+
+  ```sh
+  shutdown -h now
+  ```
 
 # linux里source、sh、bash、./有什么区别
 
