@@ -220,6 +220,72 @@ scp [可选参数] file_source file_target
   shutdown -h now
   ```
 
+* mount
+
+  进行挂载
+
+* lspci
+
+  显示所有的pci设备信息
+
+* rsync
+
+  rsync是linux系统下的数据镜像备份工具。使用快速增量备份工具Remote Sync可以远程同步，支持本地复制，或者与其他SSH、rsync主机同步。
+
+## case
+
+1. 当前文件夹及子目录中找出内容含“Ex”的文件并按文件大小排序。  
+
+``````shell
+ls -S `grep -Rl Ex ./* `
+``````
+
+  * 说明：-S从大到小 ; grep：-R搜寻子目录，-l只显示文件名 ;  利用**``**将其作为ls的输入 
+
+    grep -n:结果输出行号
+
+2. 11分钟后关机  
+   `shutdown -h +11`  
+
+3. 更改Linux系统的主机名(hostname)  
+   `sudo vi /etc/hostname`  
+
+4. 显示当前目录下的所有文件及文件夹包括隐藏的.和..等的详细信息  
+   `ls -al`  
+
+5. arp(Address Resolution Protocol)  
+   arp命令用于操作主机的arp缓冲区，可以用来显示arp缓冲区中的所有条目、删除指定的条目或者添加静态的ip地址与MAC地址对应关系。  
+   查看ARP缓存记录的命令  
+   `arp -a`  
+
+6. 重新启动Linux系统的同时把内存中的信息写入硬盘  
+   shutdown -r now  
+   shutdown命令可以**安全地**关闭或重启Linux系统  
+   使用reboot命令可以快速地关闭系统，但如果还有其它用户在该系统上工作时，就会引起数据的**丢失**。所以使用reboot命令的场合主要是在**单用户**模式。  
+
+7. 切换目录  
+   home:cd ~  
+   根目录:cd /  
+
+8. 帮助类命令  
+   ls --help  
+   man ls(更详细)  
+
+9. 重定向 将当前目录的文件存至某一路径：  
+   `ls >> /Users/lu/Documents/Code/linux/test.txt`(>为覆盖；>>追加)  
+
+10. 列出当前目录以及子目录下所有扩展名为“.txt”的文件  
+    `find . -name "*.txt"`  或`ls | grep .txt`
+
+11. 利用管道符计算1+2+3+...+100的值  
+
+    管道符“|”将两个命令隔开，管道符左边命令的输出就会作为管道符右边命令的输入。
+
+    ```shell
+    echo {1..100} |tr ' ' '+'| bc   
+    # tr:替换，   bc：linux计算器
+    ```
+
 # linux里source、sh、bash、./有什么区别
 
 **1、source**
@@ -262,10 +328,6 @@ chmod +x a.sh
 
 可以用chmod +x添加执行权限
 
-# rsync
-
-rsync是linux系统下的数据镜像备份工具。使用快速增量备份工具Remote Sync可以远程同步，支持本地复制，或者与其他SSH、rsync主机同步。
-
 # 后台执行命令
 
 为了使这些进程能够在后台运行，也就是说不在终端屏幕上运行，有几种选择方法可供使用  
@@ -286,51 +348,6 @@ chmod [] <file>
 d指目录， rw-r--r--   = 644
 
 文件夹绿色高亮,表明权限为777
-
-# case
-
-1. 当前文件夹及子目录中找出内容含“Ex”的文件并按文件大小排序。  
-
-``````shell
-ls -S `grep -Rl Ex ./* `
-``````
-
-  * 说明：-S从大到小 ; grep：-R搜寻子目录，-l只显示文件名 ;  利用**``**将其作为ls的输入 
-
-    grep -n:结果输出行号
-
-2. 11分钟后关机  
-`shutdown -h +11`  
-
-3. 更改Linux系统的主机名(hostname)  
-`sudo vi /etc/hostname`  
-4. 显示当前目录下的所有文件及文件夹包括隐藏的.和..等的详细信息  
-`ls -al`  
-5. arp(Address Resolution Protocol)  
-arp命令用于操作主机的arp缓冲区，可以用来显示arp缓冲区中的所有条目、删除指定的条目或者添加静态的ip地址与MAC地址对应关系。  
-查看ARP缓存记录的命令  
-`arp -a`  
-6. 重新启动Linux系统的同时把内存中的信息写入硬盘  
-shutdown -r now  
-shutdown命令可以**安全地**关闭或重启Linux系统  
-使用reboot命令可以快速地关闭系统，但如果还有其它用户在该系统上工作时，就会引起数据的**丢失**。所以使用reboot命令的场合主要是在**单用户**模式。  
-7. 切换目录  
-home:cd ~  
-根目录:cd /  
-8. 帮助类命令  
-ls --help  
-man ls(更详细)  
-9. 重定向 将当前目录的文件存至某一路径：  
-ls >> /Users/lu/Documents/Code/linux/test.txt(>为覆盖；>>追加)  
-10. 列出当前目录以及子目录下所有扩展名为“.txt”的文件  
-`find . -name "*.txt"`  或`ls | grep .txt`
-11. 利用管道符计算1+2+3+...+100的值  
-    ```shell
-    echo {1..100} |tr ' ' '+'| bc   
-    # tr:替换，   bc：linux计算器
-    ```
-
-
 
 # 进程vs线程
 
