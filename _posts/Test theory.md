@@ -1,3 +1,26 @@
+# 白盒测试  
+六种覆盖方法中，覆盖准则由弱到强依次是语句覆盖、判定覆盖（分支覆盖）、条件覆盖、判定/条件覆盖、条件组合覆盖、路径覆盖。  
+* 边界值法白盒黑盒均适用  
+
+# 黑盒测试
+1. 等价类划分测试
+* 有效等价类
+* 无效等价类
+2. 边界值分析
+3. 决策表测试？
+4. 因果图
+
+# 分类  
+按开发阶段分为单元测试，集成测试，确认测试，系统测试，验收测试。  
+单元测试：根绝详细设计来设计用例  
+ps：单元测试-详细设计 集成测试-概要设计 确认测试，系统测试-需求文档 验收测试-用户需求  
+# QPS
+Query Per Second  
+
+0902
+B/S架构 即浏览器和服务器架构模式，有比C/S更强的适应范围，一般只要有操作系统和浏览器就行。  
+C/S 服务器-客户机  客户端需要安装专用的客户端软件。两端的通讯速度和通讯的效率大大的提高
+
 # 测试的各种类型
 
 What is Shakeout testing? This test is basically carried out to check the networking facility, database connectivity and the integration of modules. The Configuration Management team, who prepare builds for test environments, normally does this test. They also test whether the major components of the software are not broken. This test is done BEFORE the build is deployed in the test environment. After the shake out testing, the next step is smoke testing (which is done by the testers after the build is deployed in the test environment)
@@ -128,3 +151,26 @@ Protractor is a [Node.js](http://nodejs.org/) program.
 
 A test matrix is used to map test scripts to requirements.
 
+# 测试策略
+
+测试策略：侧重需求分析，评估风险，定义测试范围，确定测试方法，制定测试启动、停止、完成标准和条件。  
+项目A:  
+![项目示意图](C:/Users/TANGLELU/Documents/GitHub/QA/_posts/项目示意图.jpg)  
+
+1. 开始  
+   收集更多信息  
+
+* 项目的范围  
+* 人力投入  
+* 历史情况  
+* ……  
+
+2. “四步测试策略制定法”  
+   明确产品质量目标  
+   风险分析  
+   适配产品开发流程  
+   测试分层  
+3. 制定总体测试策略  
+   优先级
+4. 制定阶段测试策略  
+   4.4 验收测试策略  
