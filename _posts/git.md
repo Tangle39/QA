@@ -49,3 +49,9 @@ $ git checkout [file]
 每一次功能开发， 对多个 commit 进行合并处理   
 2. 分支合并
 
+在 Git 中删除本地分支的命令是：
+
+```shell
+git branch -d  local_branch_name
+```
+
