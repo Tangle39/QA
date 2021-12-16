@@ -197,7 +197,13 @@ def main():
 
 LEGB规定了查找一个名称的顺序为：local-->enclosing function locals-->global-->builtin
 
-通过把一些模块进行加载和重命名(库中的类)操作，可以加快查找速度？
+通过把一些模块进行加载和重命名(库中的类)操作，可以加快查找速度
+
+需要定义class`LibLoader`,实现`_get_library_instance`
+
+在基类进行lib_loader,子类就可以invoke，如:
+
+`self.sec = self.lib.security`
 
 # 常用模块
 
