@@ -15,6 +15,12 @@
 9. 执行/etc/rc.d/rc.local  
 10. 执行/bin/login程序，进入登录状态
 
+## BIOS
+
+进入BIOS(一般为一直按del键)可以设置一些参数，如
+
+可以设置外接风扇的转速
+
 # 开机执行命令
 
 ~/.bash_profile
