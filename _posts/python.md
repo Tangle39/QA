@@ -54,6 +54,15 @@ c.values()
 
 
 
+# 语句
+
+`for/while
+{...[break]}
+else`
+
+若自然结束循环，else部分执行;若break,则不执行
+
+
 # 内建函数
 
 实用内建函数
