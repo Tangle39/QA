@@ -118,3 +118,44 @@ git reset --hard HEAD^   # 回退到上个版本
 
 - 穿梭前，用`git log`可以查看提交历史，以便确定要回退到哪个版本。
 - 要重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
+
+# 远程操作
+
+```sh
+git push <远程主机名> <本地分支名>:<远程分支名>
+```
+
+如果省略远程分支名，则表示将本地分支推送与之存在"追踪关系"的远程分支（通常两者同名），如果该远程分支不存在，则会被新建。
+
+如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。
+
+> ```sh
+> $ git push origin :master
+> # 等同于
+> $ git push origin --delete master
+> ```
+
+上面命令表示删除`origin`主机的`master`分支。
+
+如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。
+
+> ```sh
+> $ git push origin
+> ```
+
+上面命令表示，将当前分支推送到`origin`主机的对应分支。
+
+如果当前分支只有一个追踪分支，那么主机名都可以省略。
+
+> ```sh
+> $ git push
+> ```
+
+不带任何参数的`git push`，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。如果要修改这个设置，可以采用`git config`命令。
+
+```sh
+$ git config --global push.default matching
+# 或者
+$ git config --global push.default simple
+```
+
