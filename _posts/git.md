@@ -13,9 +13,25 @@ $ git init [project-name]
 下载一个项目和它的整个代码历史  
 $ git clone [url]  
 
-2. 配置  
-    显示当前git配置  
-    git config --list  
+# 配置  
+
+显示当前git配置
+
+```sh
+git config --list  
+```
+
+进行配置
+
+`git config --global user.name "username"  `
+`git config --global user.email "email"`
+
+--global 表示全局的
+
+`git config user.name "username"`  
+`git config  user.email "email"`
+
+局部是只对当前仓库起效的
 
 # 文件改动
 
