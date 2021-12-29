@@ -94,6 +94,15 @@ print("------Script: {:<3}.py ------".format('sa'))
 print("{:x}".format(16)) # 16进制
 ```
 
+不仅仅用于打印,如:
+
+```python
+CMD = r"sudo setpci -s {pit} {pil}"   # 加r防转义
+pit = 3
+pil = 1
+rdc = CMD.format(pit=pit,pil=pil)  # sudo setpci -s 3 1
+```
+
 ## 数字相关
 
 ### float
@@ -521,7 +530,7 @@ def main():
 
 ## gc
 
-python里gc.collect()命令可以回收没有被使用的空间，但是这个命令还会返回一个数值，是清除掉的垃圾变量的个数
+python里`gc.collect()`命令可以回收没有被使用的空间，但是这个命令还会返回一个数值，是清除掉的垃圾变量的个数
 
 ## random
 
@@ -536,6 +545,12 @@ def main():
 ```
 
 [↑top](#目录)
+
+## timeit
+
+更好的时间精度模块
+
+`default_timer()`根据不同的操作系统和python版本，选择最为合适的计时器。
 
 # 语法解析
 

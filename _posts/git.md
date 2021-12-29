@@ -21,6 +21,8 @@ $ git clone [url]
 git config --list  
 ```
 
+过长的配置页可以按q退出
+
 进行配置
 
 `git config --global user.name "username"  `
@@ -29,7 +31,7 @@ git config --list
 --global 表示全局的
 
 `git config user.name "username"`  
-`git config  user.email "email"`
+`git config user.email "email"`
 
 局部是只对当前仓库起效的
 

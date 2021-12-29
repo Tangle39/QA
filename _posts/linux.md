@@ -199,6 +199,17 @@ tail -n +100 filename
 scp [可选参数] file_source file_target 
 ```
 
+## Systemd
+
+为系统的启动和管理提供一套完整的解决方案,是一组命令
+
+主要的:`systemctl`，用于管理系统，例:
+
+```sh
+# 重启smb服务器
+sudo systemctl restart smb
+```
+
 ## 其他
 
 * df
@@ -292,7 +303,7 @@ ls -S `grep -Rl Ex ./* `
     # tr:替换，   bc：linux计算器
     ```
 
-# linux里source、sh、bash、./有什么区别
+# 执行脚本
 
 **1、source**
 
@@ -416,6 +427,30 @@ socket()
 
 若堆栈的空间设置太大，会浪费内存资源。而设置得太小，则会出现堆栈溢出，在没有MMU功能的操作系统中，可能会导致系统奔溃。
 
+# smb服务
+
+samba服务器用于文件共享，可以用于linux作服务器，Win作为客户端
+
+服务器配置
+
+```sh
+cd /etc/samba
+# 参考配置
+[lu]
+        comment = lu
+        path = /users/lu
+        read only = no
+        browseable = yes
+        writable = yes
+        valid users = lu
+```
+
+客户端
+
+![image-20211229174134095](img/image-20211229174134095.png)
+
+![image-20211229174351209](img/image-20211229174351209.png)
+
 
 >reference 
 >http://ju.outofmemory.cn/entry/337199 
@@ -424,3 +459,4 @@ socket()
 >https://www.cnblogs.com/pcat/p/5467188.html
 
 [↑top](#目录)
+
