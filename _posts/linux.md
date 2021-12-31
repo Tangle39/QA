@@ -27,6 +27,10 @@
 
 每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该 文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件.
 
+# 文件颜色
+
+蓝色表示目录；绿色表示可执行文件；红色表示压缩文件；浅蓝色表示链接文件；灰色表示其它文件；红色闪烁表示链接的文件有问题；黄色是设备文件
+
 # 命令
 
 ## 命令行操作
@@ -112,6 +116,14 @@ awk '{print $1}' log.txt
 ``````shell
 grep -n test test.txt 
 ``````
+
+通过参数控制上下文
+
+`-C 5` 匹配的以及上下5行
+
+`-B 5` 前5行 
+
+`-A 5` 后5行
 
 ## ps
 
@@ -245,6 +257,10 @@ sudo systemctl restart smb
 
   显示所有的pci设备信息
 
+  setpci
+
+  查询和配置PCI设备(寄存器)
+
 * rsync
 
   rsync是linux系统下的数据镜像备份工具。使用快速增量备份工具Remote Sync可以远程同步，支持本地复制，或者与其他SSH、rsync主机同步。
@@ -364,8 +380,6 @@ chmod [] <file>
 查看文件权限： ls -l
 d指目录， rw-r--r--   = 644
 
-文件夹绿色高亮,表明权限为777
-
 # 进程vs线程
 
 进程是操作系统**资源分配**的基本单位；线程是**任务调度和执行**的基本单位  
@@ -451,7 +465,24 @@ cd /etc/samba
 
 ![image-20211229174351209](img/image-20211229174351209.png)
 
+# mem
 
+位于/dev/mem，是设备文件，通过mmap可以将物理地址映射到用户空间的虚拟地址上，在用户空间完成对设备寄存器的操作
+
+利用mem可以实现**devmem2**
+
+```sh
+devmem2 { address } [ type [ data ] ]             
+#address ： 物理地址             
+#type ：要访问的数据类型 : [b]yte, [h]alfword, [w]ord             
+#data ：想要写入的数据，若为读取操作则省略此参数，若为写入，则必须含有此参数。
+```
+
+
+
+
+
+>
 >reference 
 >http://ju.outofmemory.cn/entry/337199 
 >https://www.cnblogs.com/shishanyu/p/7966975.html    
