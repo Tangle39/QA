@@ -62,6 +62,44 @@ else`
 
 若自然结束循环，else部分执行;若break,则不执行
 
+# 语法解析
+
+1.  a,b = b,a是怎么实现的
+
+**在python中，会在过程中生成一个元组 c，并且c = (b ,a)，然后进行a = c[0] ， b = c[1] 的操作**
+
+2. a,b=b,a+b
+
+先计算=右边的值
+
+## `*`运算符
+
+将不定数量的参数传递给一个函数
+
+```python
+def fun(name, *args):
+    # print(f'type:{type(args)}' )
+    print(f'你好,{name}')
+    for i in args:
+        print(f'你的宠物有:{i}')
+```
+
+本质是将*后面的可迭代对象解包出来
+
+## **DocStrings**
+
+文档字符串是一个重要工具，用于解释文档程序，帮助你的程序文档更加简单易懂。
+
+``````python
+def function():
+        ''' say something here！
+        '''
+        pass
+ 
+print (function.__doc__) # 调用 doc    ->say something here！
+``````
+
+
 
 # 内建函数
 
@@ -232,8 +270,6 @@ LEGB规定了查找一个名称的顺序为：local-->enclosing function locals-
 ```python
 system(command:str) # 在一个子shell执行command命令
 ```
-
-
 
 ## collections
 
@@ -552,42 +588,14 @@ def main():
 
 `default_timer()`根据不同的操作系统和python版本，选择最为合适的计时器。
 
-# 语法解析
+## platform
 
-1.  a,b = b,a是怎么实现的
-
-**在python中，会在过程中生成一个元组 c，并且c = (b ,a)，然后进行a = c[0] ， b = c[1] 的操作**
-
-2. a,b=b,a+b
-
-先计算=右边的值
-
-## `*`运算符
-
-将不定数量的参数传递给一个函数
+用于查看当前操作系统的信息，来采集系统版本位数计算机类型名称内核等一系列信息
 
 ```python
-def fun(name, *args):
-    # print(f'type:{type(args)}' )
-    print(f'你好,{name}')
-    for i in args:
-        print(f'你的宠物有:{i}')
+platform.architecture() #获取操作系统的位数，('32bit', 'ELF')
+platform.platform()    #获取操作系统名称及版本号，'Linux-3.13.0-46-generic-i686-with-Deepin-2014.2-trusty'
 ```
-
-本质是将*后面的可迭代对象解包出来
-
-## **DocStrings**
-
-文档字符串是一个重要工具，用于解释文档程序，帮助你的程序文档更加简单易懂。
-
-``````python
-def function():
-        ''' say something here！
-        '''
-        pass
- 
-print (function.__doc__) # 调用 doc    ->say something here！
-``````
 
 
 

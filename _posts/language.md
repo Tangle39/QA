@@ -1,3 +1,12 @@
-1. She twirled a strand of hari round her fingger.  
+She twirled a strand of hair round her finger.  
 她把一绺(liu3)头发绕在手指上  
-2. Business is always brisk(兴隆) before Christmas.
+Business is always brisk(兴隆) before Christmas.
+
+Calibration	n.校准
+
+
+
+   
+
+
+
