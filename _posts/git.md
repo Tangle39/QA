@@ -3,15 +3,18 @@
 git  
 是一个分布式版本控制软件  
 
-1. 新建代码库  
+新建代码库  
 在当前目录新建一个Git代码库  
-$ git init
+
+> $ git init
 
 新建一个目录，将其初始化为Git代码库  
-$ git init [project-name]  
+
+> $ git init [project-name]  
 
 下载一个项目和它的整个代码历史  
-$ git clone [url]  
+
+> $ git clone [url]  
 
 # 配置  
 
@@ -39,20 +42,21 @@ git config --list
 
 3. 增加/删除文件
     添加指定文件到暂存区  
-    $ git add [file1] [file2] ...
-
+    
+    > $ git add [file1] [file2] ...
+    
     添加指定目录到暂存区，包括子目录：
-
+    
     ```sh
     git add [dir]
     ```
-
+    
     添加当前目录下的所有文件到暂存区：
-
+    
     ```sh
     git add .
     ```
-
+    
 4. 代码提交  
     提交暂存区到仓库区  
     $ git commit -m [message]    
@@ -62,7 +66,7 @@ git config --list
 # 分支管理
 列出所有本地分支
 ```sh
-  git branch
+git branch
 ```
 
  删除本地分支：

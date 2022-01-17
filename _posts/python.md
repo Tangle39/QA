@@ -580,6 +580,11 @@ def main():
     print(l)
 ```
 
+```python
+sample(population,k)
+# Chooses k unique random elements from a population sequence
+```
+
 [↑top](#目录)
 
 ## timeit
@@ -597,7 +602,9 @@ platform.architecture() #获取操作系统的位数，('32bit', 'ELF')
 platform.platform()    #获取操作系统名称及版本号，'Linux-3.13.0-46-generic-i686-with-Deepin-2014.2-trusty'
 ```
 
+## string
 
+该模块存储一些常用的变量整体,如:`string.letters`存储了各种字母,`digits`存储了数字,`punctuation`存储了符号
 
 # 装饰器
 

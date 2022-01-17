@@ -4,7 +4,7 @@ Business is always brisk(兴隆) before Christmas.
 
 Calibration	n.校准
 
-
+forcible/ˈfɔːrsəbl/ adj.强制的
 
    
 
