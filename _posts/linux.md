@@ -271,11 +271,17 @@ grep -n test test.txt
   /var/log/wtmp也是一个二进制文件，记录每个用户的登录次数和持续时间等信息  
   可以用last命令输出当中内容
   
+### 关机
+
 * 立即关机
 
   ```sh
-  shutdown -h now
+  sudo shutdown -h now
+  # -h : 关机后停机
   ```
+  shutdown是安全的关闭  
+
+  poweroff关闭计算机操作系统并且切断系统电源, 执行该命令之后lspci可能会找不到pci设备
 
 * mount
 
@@ -321,7 +327,7 @@ ls -S `grep -Rl Ex ./* `
 
 6. 重新启动Linux系统的同时把内存中的信息写入硬盘  
    shutdown -r now  
-   shutdown命令可以**安全地**关闭或重启Linux系统  
+   shutdown命令可以**安全地**重启Linux系统  
    使用reboot命令可以快速地关闭系统，但如果还有其它用户在该系统上工作时，就会引起数据的**丢失**。所以使用reboot命令的场合主要是在**单用户**模式。  
 
 7. 切换目录  
