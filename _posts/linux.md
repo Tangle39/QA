@@ -250,6 +250,10 @@ grep -n test test.txt
 
 `-A 5` 后5行
 
+-c, --count               print only a count of matching lines per FILE
+
+更多参数参见grep --help
+
 ## 其他
 
 * df
@@ -294,6 +298,9 @@ grep -n test test.txt
   setpci
 
   查询和配置PCI设备(寄存器)
+
+* lsmod
+  （英文全拼：list modules）命令用于显示已载入系统的模块
 
 * rsync
 

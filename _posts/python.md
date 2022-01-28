@@ -34,6 +34,8 @@ def letterCombinations(digits: str) -> list:
     return ans
 ```
 
+此外亦有字典推导式，集合推导式
+
 ## 字典
 
 字典在python中非常常用，可以当作哈希表
@@ -48,7 +50,7 @@ c1 = {}
 获取字典的键，值
 
 ```python
-c.keys()  # 此时的类型为dict_keys，可以用list()等进行转换
+c.keys()  # 此时的类型为dict_keys，可以用list()等进行转换,python2返回的是list
 c.values()
 ```
 
@@ -224,6 +226,16 @@ matrix[:] = map(list, zip(*matrix))  # [:]有隐形转换
 # [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
 
+## filter
+
+用法与map类似，也返回迭代器
+
+例子:
+
+```python
+q = filter(lambda x: x % 2 == 1, [1, 2, 3, 4, 5])  #  过滤出奇数
+```
+
 ## 类相关
 
 ### setattr
@@ -275,6 +287,12 @@ LEGB规定了查找一个名称的顺序为：local-->enclosing function locals-
 system(command:str) # 在一个子shell执行command命令
 ```
 
+### os.path
+
+跟路径相关
+
+`os.path.abspath(__file__)`代表当前脚本的绝对路径
+
 ## collections
 
 ### defaultdict
@@ -316,7 +334,7 @@ list(permutations(range(3), 2)) --> [(0,1), (0,2), (1,0), (1,2), (2,0), (2,1)]
 
 ### product
 
-用于求多个可迭代对象的笛卡尔积(Cartesian Product)，它跟嵌套的 for 循环等价
+用于求多个可迭代对象的笛卡尔积(Cartesian Product)，它跟嵌套的 for 循环等价，即各个元素排列组合
 
 内部生成元素为tuple
 

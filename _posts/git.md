@@ -38,32 +38,42 @@ git config --list
 
 局部是只对当前仓库起效的
 
-# 文件改动
+# 提交与修改
 
-3. 增加/删除文件
+增加/删除文件
     添加指定文件到暂存区  
-    
-    > $ git add [file1] [file2] ...
-    
-    添加指定目录到暂存区，包括子目录：
-    
-    ```sh
-    git add [dir]
-    ```
-    
-    添加当前目录下的所有文件到暂存区：
-    
-    ```sh
-    git add .
-    ```
-    
-4. 代码提交  
+
+```sh
+> $ git add [file1] [file2] ...
+```
+#添加指定目录到暂存区，包括子目录：
+
+```sh
+git add [dir]
+```
+
+#添加当前目录下的所有文件到暂存区：
+
+```sh
+git add .
+```
+代码提交  
     提交暂存区到仓库区  
-    $ git commit -m [message]    
-    提交时显示所有diff信息  
-    $ git commit -v
+
+```sh
+$ git commit -m [message]
+```
+
+提交时显示所有diff信息  
+`$ git commit -v`
+
+## git diff
+
+- 尚未缓存的改动：**git diff**
+- 查看已缓存的改动： **git diff --cached**
 
 # 分支管理
+
 列出所有本地分支
 ```sh
 git branch
@@ -141,7 +151,7 @@ git reset --hard HEAD^   # 回退到上个版本
 - 穿梭前，用`git log`可以查看提交历史，以便确定要回退到哪个版本。
 - 要重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
 
-# 远程操作
+## 远程操作
 
 ```sh
 git push <远程主机名> <本地分支名>:<远程分支名>
