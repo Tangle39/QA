@@ -38,6 +38,16 @@ git config --list
 
 局部是只对当前仓库起效的
 
+## 配置ssh密钥
+
+在.ssh文件夹执行语句
+
+`ssh-keygen -t rsa -C "youremail@example.com"`
+
+一路点yes
+
+将id_rsa.pub的内容增加到自己Bitbucket的SSH keys中
+
 # 提交与修改
 
 增加/删除文件

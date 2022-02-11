@@ -54,6 +54,14 @@ c.keys()  # 此时的类型为dict_keys，可以用list()等进行转换,python2
 c.values()
 ```
 
+字典也可以使用pop()，但必须给出key
+
+### OrderedDict
+
+使用OrderedDict会根据放入元素的先后顺序进行排序。所以输出的值是排好序的
+
+需要包含模块collections
+
 ## 集合
 
 集合（set）是一个无序的不重复元素序列
@@ -78,19 +86,23 @@ else`
 
 先计算=右边的值
 
-## `*`运算符
+## 不定参数
 
 将不定数量的参数传递给一个函数
 
 ```python
 def fun(name, *args):
-    # print(f'type:{type(args)}' )
+    # print(f'type:{type(args)}' )  #此时args为tuple
     print(f'你好,{name}')
     for i in args:
         print(f'你的宠物有:{i}')
+fun('Bob', 'cat', 'dog', 'bird')
+def g(**kwargs): 
+    print(kwargs)  # type: dict
+g(expected_type_list='InvalidField')
 ```
 
-本质是将*后面的可迭代对象解包出来
+本质是将*/**后面的可迭代对象解包出来
 
 ## **DocStrings**
 
@@ -636,7 +648,7 @@ platform.platform()    #获取操作系统名称及版本号，'Linux-3.13.0-46-
 def timefn(fn):
     """计算性能的修饰器"""
 
-    @wraps(fn)
+    @wraps(fn)  # wraps本身也是一个装饰器，它能把原函数的元信息拷贝到装饰器函数中，这使得装饰器函数也有和原函数一样的元信息
     def measure_time(*args, **kwargs):
         t1 = time.time()
         result = fn(*args, **kwargs)
@@ -650,13 +662,17 @@ def fun(argc):
     pass
 ```
 
+使用类装饰器还可以依靠类内部的 `__call__`方法
+
 # 异常处理
 
 ```python
 try:
-    pass
-except:
-    pass
+    4 / 0
+except Exception as e: # 将捕获到的异常对象赋值给e
+    print(e) # 访问异常详细信息
+else:
+    # 当 try 块没有出现异常时，程序会执行 else 块; else块可以不要
 finally:
     pass
     # finally中的语句一定会被执行
@@ -715,7 +731,7 @@ ra.get_device_id()
 ```python
 class BaseDevice():
     _deviceName: str = None  # 保护变量，只能自己或子类使用
-    __deviceId = None
+    __deviceId = None # 私有变量，只能内部使用
 
     def __init__(self, name, id):
         self._deviceName = name
@@ -955,9 +971,11 @@ def canJump(nums: List[int]) -> bool:
     return True
 ```
 
+# 开发工具
 
+## 2to3
 
-test
+2to3 是一个 Python 程序，它可以用来读取 Python 2.x 版本的代码，并使用一系列的 *修复器* 来将其转换为合法的 Python 3.x 代码。详见[2to3 - 自动将 Python 2 代码转为 Python 3 代码 — Python 3.7.12 文档](https://docs.python.org/zh-cn/3.7/library/2to3.html)
 
 [↑top](#目录)
 
