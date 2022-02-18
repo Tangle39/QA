@@ -82,6 +82,22 @@ $ git commit -m [message]
 - 尚未缓存的改动：**git diff**
 - 查看已缓存的改动： **git diff --cached**
 
+## git log
+
+查看分支提交历史
+
+查看具体某文件的具体改动
+
+git log -p [file_name]
+
+## git show
+
+显示提交日志的相关信息
+
+查看某文件某次commit的改动:
+
+git show [commit-id] [filename]
+
 # 分支管理
 
 列出所有本地分支
@@ -115,7 +131,7 @@ git branch -r
     $ git show [tag]
 
 2. 查看信息  
-    显示有变更的文件  
+    **显示有变更的文件**  
     $ git status
     显示当前分支的版本历史  
     $ git log
@@ -201,3 +217,6 @@ $ git config --global push.default matching
 $ git config --global push.default simple
 ```
 
+### 远程分支创建
+
+在Bitbucket创建分支后,自己本地需要先运行git pull, 更新信息之后才能git checkout到该分支

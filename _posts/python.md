@@ -47,6 +47,8 @@ c = dict() # 或者
 c1 = {}
 ```
 
+注意:{} is not None
+
 获取字典的键，值
 
 ```python
@@ -61,6 +63,14 @@ c.values()
 使用OrderedDict会根据放入元素的先后顺序进行排序。所以输出的值是排好序的
 
 需要包含模块collections
+
+### 更新字典
+
+```python
+dict.update(dict2)
+```
+
+dict2 -- 添加到指定字典dict里的字典
 
 ## 集合
 
@@ -752,7 +762,7 @@ if __name__ == '__main__':
     print(b.deviceID)
 ```
 
-property使用场景：1.修饰方法，使方法可以像属性一样访问。调用时不用括号
+property使用场景：1.修饰方法，使方法可以像属性一样访问。调用时不用括号，**不能带参数**
 
 2.与所定义的属性配合使用，这样可以防止属性被修改
 
@@ -976,6 +986,10 @@ def canJump(nums: List[int]) -> bool:
 ## 2to3
 
 2to3 是一个 Python 程序，它可以用来读取 Python 2.x 版本的代码，并使用一系列的 *修复器* 来将其转换为合法的 Python 3.x 代码。详见[2to3 - 自动将 Python 2 代码转为 Python 3 代码 — Python 3.7.12 文档](https://docs.python.org/zh-cn/3.7/library/2to3.html)
+
+## pylint
+
+代码规范检查
 
 [↑top](#目录)
 
