@@ -254,6 +254,22 @@ grep -n test test.txt
 
 更多参数参见grep --help
 
+## tee
+
+用于读取标准输入的数据，并将其内容输出成文件
+
+## screen
+
+多窗口管理，可以查看后台的进程
+
+-d<作业名称> 　将指定的screen作业离线
+
+-r<作业名称> 　恢复离线的screen作业
+
+-ls或--list 　显示目前所有的screen作业
+
+有时需要使用sudo screen才能看到该作业
+
 ## 其他
 
 * df

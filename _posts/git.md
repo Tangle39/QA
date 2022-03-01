@@ -168,14 +168,17 @@ git branch -r
    1. 可以使用`git stash`把工作区空间的修改隐藏起来,就可以切换到其他分支了,然后使用`git stash list`查看stash，再用`git stash pop stash@{0}`应用并删除该stash@{0}
    2. 使用`git commit`提交
 
-版本回退
+## 版本回退
 
 ```sh
 git reset --hard HEAD^   # 回退到上个版本
 ```
 
 - 穿梭前，用`git log`可以查看提交历史，以便确定要回退到哪个版本。
+
 - 要重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
+
+可以使用git revert [cid]来重做（撤销）某次提交
 
 ## 远程操作
 

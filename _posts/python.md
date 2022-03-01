@@ -419,6 +419,18 @@ p2 = multiprocessing.Process(target=saku1)
 p2.start()  # 不能直接用run，是假的多进程，几个函数的pid会相同
 ```
 
+## subprocess 
+
+Popen 是 subprocess的核心，子进程的创建和管理都靠它处理
+
+```python
+import subprocess
+cmd = 'ls'  
+subprocess.Popen(cmd, shell = True)
+```
+
+
+
 ## queue
 
 queue 模块即队列，特别适合处理信息在多个线程间安全交换的多线程程序中
@@ -990,6 +1002,16 @@ def canJump(nums: List[int]) -> bool:
 ## pylint
 
 代码规范检查
+
+## pdb
+
+代码调试工具
+
+```python
+#进入pdb
+import pdb
+pdb.set_trace()
+```
 
 [↑top](#目录)
 
