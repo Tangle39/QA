@@ -80,7 +80,12 @@ $ git commit -m [message]
 ## git diff
 
 - 尚未缓存的改动：**git diff**
+
 - 查看已缓存的改动： **git diff --cached**
+
+  查看两次commit的差异，仅显示文件
+
+ `git diff {cid1} {cid2} --name-only`
 
 ## git log
 
@@ -94,9 +99,27 @@ git log -p [file_name]
 
 显示提交日志的相关信息
 
-查看某文件某次commit的改动:
+查看（某文件）某次commit的改动:
 
-git show [commit-id] [filename]
+git show [commit-id] ([filename])
+
+## git stash
+
+只是完成一半，还不想提交，这时可以用git stash命令将修改的内容保存至[堆栈](https://so.csdn.net/so/search?q=堆栈&spm=1001.2101.3001.7020)区
+
+git stash save ""
+
+git stash list
+
+git stash pop 恢复最近的缓存到当前文件中，同时删除恢复的缓存条目
+
+git stash apply stash@{id}
+
+git stash drop stash@{id}
+
+## git commit
+
+有时你提交过代码之后，发现一个地方改错了，你下次提交时不想保留上一次的记录；或者你上一次的commit message的描述有误，这时候你可以使用接下来的这个命令：git commit --amend
 
 # 分支管理
 
@@ -120,6 +143,14 @@ git branch -r
 ```
 
 `git merge branch_name`命令用于合并指定分支到**当前**分支
+
+`git cherry-pick {cid}`
+
+将某次提交应用到当前分支
+
+
+
+
 
 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
 
@@ -151,8 +182,6 @@ git branch -r
     恢复暂存区的指定文件到工作区  
     $ git checkout -- file_name
 
-5. git rebase
-    过多的commit会影响code review，造成分支污染
 * 场景
 1. 合并多次提交纪录：
     每一次功能开发， 对多个 commit 进行合并处理   
@@ -223,3 +252,21 @@ $ git config --global push.default simple
 ### 远程分支创建
 
 在Bitbucket创建分支后,自己本地需要先运行git pull, 更新信息之后才能git checkout到该分支
+
+### rebase
+
+rebase操作可以把本地未push的分叉提交历史整理成直线
+
+自己commit之后push失败，需要git pull之后再push，但是会造成分支分叉，所以push之前进行git rebase
+
+
+
+将远程分支合进本地:
+
+```shell
+git pull
+git merge origin/{branch name}
+```
+
+
+

@@ -662,6 +662,14 @@ platform.platform()    #获取操作系统名称及版本号，'Linux-3.13.0-46-
 
 该模块存储一些常用的变量整体,如:`string.letters`存储了各种字母,`digits`存储了数字,`punctuation`存储了符号
 
+## binascii
+
+包含很多在二进制和二进制表示的各种ASCII码之间转换的方法
+
+`binascii.hexlify(data)`
+
+返回__二进制__数据 *data* 的十六进制表示形式。在py3中data如果为str会报错,需要encode，转化了二进制(ascii码)
+
 # 装饰器
 
 在不改变原有功能代码的基础上,添加额外的功能,如用户验证等。有助于让代码更简短
@@ -1012,6 +1020,10 @@ def canJump(nums: List[int]) -> bool:
 import pdb
 pdb.set_trace()
 ```
+
+可以打印各种变量或者表达式的值
+
+按u到上一层
 
 [↑top](#目录)
 

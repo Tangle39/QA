@@ -27,7 +27,13 @@
 
 ~/.bash_profile
 
-每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该 文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件.
+每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件.
+
+类似的:
+
+~/**.bashrc**:该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该文件被读取.（每个用户都有一个.bashrc文件，在用户目录下）
+
+此文件类似于/etc/bashrc，不需要重启生效，__重新打开一个bash__即可生效
 
 ## 文件颜色
 
@@ -270,6 +276,19 @@ grep -n test test.txt
 
 有时需要使用sudo screen才能看到该作业
 
+### 关机
+
+* 立即关机
+
+  ```sh
+  sudo shutdown -h now
+  # -h : 关机后停机
+  ```
+
+  shutdown是安全的关闭  
+
+  poweroff关闭计算机操作系统并且切断系统电源, 执行该命令之后lspci可能会找不到pci设备
+
 ## 其他
 
 * df
@@ -290,22 +309,18 @@ grep -n test test.txt
 * wtmp
   /var/log/wtmp也是一个二进制文件，记录每个用户的登录次数和持续时间等信息  
   可以用last命令输出当中内容
-  
-### 关机
-
-* 立即关机
-
-  ```sh
-  sudo shutdown -h now
-  # -h : 关机后停机
-  ```
-  shutdown是安全的关闭  
-
-  poweroff关闭计算机操作系统并且切断系统电源, 执行该命令之后lspci可能会找不到pci设备
 
 * mount
 
   进行挂载
+
+  -t：指定档案系统的型态，通常不必指定。mount 会自动选择正确的型态。
+
+  通过指定uid、gid来定义目录的访问账号
+
+  ```shell
+  sudo mount -t cifs //{remote}/***_Bin /mnt/***_bin/ -o domain={.com},username=**,password=**,rw,uid=1000,gid=1000
+  ```
 
 * lspci
 
@@ -497,7 +512,7 @@ socket()
 
 samba服务器用于文件共享，可以用于linux作服务器，Win作为客户端
 
-服务器配置
+服务器配置，文件名为smb.conf
 
 ```sh
 cd /etc/samba
