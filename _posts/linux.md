@@ -336,6 +336,12 @@ grep -n test test.txt
 * rsync
 
   rsync是linux系统下的数据镜像备份工具。使用快速增量备份工具Remote Sync可以远程同步，支持本地复制，或者与其他SSH、rsync主机同步。
+  
+## 管道符
+
+  执行某cmd发现需要手动敲y，可以
+
+`echo y | {cmd}`
 
 ## case
 

@@ -148,9 +148,11 @@ git branch -r
 
 将某次提交应用到当前分支
 
+如果面临着将dev分支或者很多零散的分支merge到一个公共release分支里。
 
+但是有一种情况是需要你处理的，就是在你的dev的分支里有很多commit记录。而这些commit是无需在release里体现的，可以使用
 
-
+`git merge --squash`
 
 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
 

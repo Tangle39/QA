@@ -258,6 +258,14 @@ matrix[:] = map(list, zip(*matrix))  # [:]有隐形转换
 q = filter(lambda x: x % 2 == 1, [1, 2, 3, 4, 5])  #  过滤出奇数
 ```
 
+## range
+
+返回类型range object,可迭代
+
+r = range(5) means a object like (0,1,2,3,4)
+
+r[0] is valid
+
 ## 类相关
 
 ### setattr
@@ -429,7 +437,17 @@ cmd = 'ls'
 subprocess.Popen(cmd, shell = True)
 ```
 
+该模块与try, shell的组合用法:
 
+```python
+try:
+    import xlrd
+except ImportError:
+    import subprocess
+    subprocess.check_output('sudo -E pip3 install xlrd -U', shell=True)
+    # subprocess.check_output('sudo /opt/python32/bin/pip install xlrd -U', shell=True)
+    import xlrd
+```
 
 ## queue
 
@@ -669,6 +687,10 @@ platform.platform()    #获取操作系统名称及版本号，'Linux-3.13.0-46-
 `binascii.hexlify(data)`
 
 返回__二进制__数据 *data* 的十六进制表示形式。在py3中data如果为str会报错,需要encode，转化了二进制(ascii码)
+
+## argparse
+
+`argparse`是一个用来解析命令行参数的 Python 库
 
 # 装饰器
 
