@@ -1047,5 +1047,13 @@ pdb.set_trace()
 
 按u到上一层
 
+## pycharm
+
+常用的python开发IDE
+
+tools旁边的vcs可以开启git等UI
+
+views→appearance→status bar widgets控制想显示的组件
+
 [↑top](#目录)
 
