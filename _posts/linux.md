@@ -518,6 +518,10 @@ socket()
 
 samba服务器用于文件共享，可以用于linux作服务器，Win作为客户端
 
+重启该服务sudo systemctl restart smb
+
+为系统创建samba用户ssdrive sudo smbpasswd -a ssdrive
+
 服务器配置，文件名为smb.conf
 
 ```sh
@@ -525,7 +529,7 @@ cd /etc/samba
 # 参考配置
 [lu]
         comment = lu
-        path = /users/lu
+        path = /users/ssdrive
         read only = no
         browseable = yes
         writable = yes

@@ -107,7 +107,7 @@ def fun(name, *args):
     for i in args:
         print(f'你的宠物有:{i}')
 fun('Bob', 'cat', 'dog', 'bird')
-def g(**kwargs): 
+def g(**kwargs):
     print(kwargs)  # type: dict
 g(expected_type_list='InvalidField')
 ```
@@ -123,7 +123,7 @@ def function():
         ''' say something here！
         '''
         pass
- 
+
 print (function.__doc__) # 调用 doc    ->say something here！
 ``````
 
@@ -158,6 +158,9 @@ print('{:.2%}'.format(0.6667)
 print("------Script: {:<3}.py ------".format('sa'))
 # 长度大于等于3，否则以空白补齐
 print("{:x}".format(16)) # 16进制
+"""
+^, <, > 分别是居中、左对齐、右对齐，后面带宽度， : 号后面带填充的字符，只能是一个字符，不指定则默认是用空格填充。
+"""
 ```
 
 不仅仅用于打印,如:
@@ -427,7 +430,7 @@ p2 = multiprocessing.Process(target=saku1)
 p2.start()  # 不能直接用run，是假的多进程，几个函数的pid会相同
 ```
 
-## subprocess 
+## subprocess
 
 Popen 是 subprocess的核心，子进程的创建和管理都靠它处理
 
@@ -619,7 +622,7 @@ import struct
 values = (1, b'abc', 2.7)
 s = struct.Struct('I3sf')  
 '''
-I:unsigned int 
+I:unsigned int
 s:char[]
 f:float
 '''
@@ -1056,4 +1059,3 @@ tools旁边的vcs可以开启git等UI
 views→appearance→status bar widgets控制想显示的组件
 
 [↑top](#目录)
-
