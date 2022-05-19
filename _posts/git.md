@@ -103,6 +103,9 @@ git log -p [file_name]
 
 git show [commit-id] ([filename])
 
+## git blame
+git blame用来追溯一个指定文件的历史修改记录
+
 ## git stash
 
 只是完成一半，还不想提交，这时可以用git stash命令将修改的内容保存至[堆栈](https://so.csdn.net/so/search?q=堆栈&spm=1001.2101.3001.7020)区
@@ -269,6 +272,3 @@ rebase操作可以把本地未push的分叉提交历史整理成直线
 git pull
 git merge origin/{branch name}
 ```
-
-
-
