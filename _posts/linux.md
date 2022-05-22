@@ -276,6 +276,14 @@ grep -n test test.txt
 
 有时需要使用sudo screen才能看到该作业
 
+-S sockname  Name this session <pid>.sockname instead of <pid>.<tty>.<host>.
+
+-L      Turn on output logging.
+
+日志会在当前目录，screenlog.0
+
+利用screen进行一个后台作业，自己的远程mobaXtern关了也能继续运行
+
 ### 关机
 
 * 立即关机
