@@ -268,17 +268,17 @@ grep -n test test.txt
 
 多窗口管理，可以查看后台的进程
 
--d<作业名称> 　将指定的screen作业离线
-
--r<作业名称> 　恢复离线的screen作业
-
 -ls或--list 　显示目前所有的screen作业
 
 有时需要使用sudo screen才能看到该作业
 
 ```sh
+-d<作业名称> 将指定的screen作业离线
+-m 即使目前已在作业中的screen作业，仍强制建立新的screen作业。
 -S sockname  Name this session <pid>.sockname instead of <pid>.<tty>.<host>.
 -L Turn on output logging.
+-r<作业名称> 恢复离线的screen作业
+screen -X [-S {PID}/{sessionname}] quit # 会杀死创建的会话，如果会话里还有程序在运行的话也会被杀掉。
 ```
 
 日志会在当前目录，screenlog.0
