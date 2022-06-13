@@ -695,6 +695,27 @@ platform.platform()    #获取操作系统名称及版本号，'Linux-3.13.0-46-
 
 `argparse`是一个用来解析命令行参数的 Python 库
 
+## ctypes
+
+提供了与 C 兼容的数据类型，并允许调用 DLL 或共享库中的函数
+
+使用的例子
+
+```python
+class Unel(ctypes.LittleEndianStructure):
+    _pack_ = 1
+    _fields_ = [
+        ('poh', ctypes.c_uint16),
+        ('ch', ctypes.c_uint8),
+    ]
+
+
+p = Unel(12, 8)
+print(p.__getattribute__('poh'))
+print(p.poh)
+print(p._fields_)
+```
+
 # 装饰器
 
 在不改变原有功能代码的基础上,添加额外的功能,如用户验证等。有助于让代码更简短
