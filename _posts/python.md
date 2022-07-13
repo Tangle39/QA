@@ -1079,4 +1079,8 @@ tools旁边的vcs可以开启git等UI
 
 views→appearance→status bar widgets控制想显示的组件
 
+## anaconda
+用于python的虚拟环境控制，同时自带很多实用module
+todo 完善用法以及常用命令
+
 [↑top](#目录)
