@@ -1081,6 +1081,11 @@ views→appearance→status bar widgets控制想显示的组件
 
 ## anaconda
 用于python的虚拟环境控制，同时自带很多实用module
-todo 完善用法以及常用命令
+自带虚拟环境base
+```sh
+conda env list  # 查看已有的虚拟环境
+conda create --name my_test python=3.7   #创建一个名称为my_test的虚拟环境，python版本3.7，也可以用pycharm的UI进行操作
+conda activate my_test  # 切换到某个虚拟环境; 可以从anaconda的navigator的UI进入
+```
 
 [↑top](#目录)
