@@ -720,6 +720,20 @@ print(p.poh)
 print(p._fields_)
 ```
 
+例子2
+
+```python
+import ctypes
+
+buf = ctypes.create_string_buffer(32)
+pattern = [0xaa, 0xbb, 0xcc, 0xdd]
+meta_buf = bytearray(pattern)
+address = ctypes.addressof(buf)
+ctypes.memmove(address, bytes(meta_buf), len(meta_buf))
+print(buf.raw)
+
+```
+
 # 装饰器
 
 在不改变原有功能代码的基础上,添加额外的功能,如用户验证等。有助于让代码更简短
@@ -950,6 +964,34 @@ def main():
 
 if __name__ == '__main__':
     main()
+```
+
+## 类的特殊函数
+
+```python
+class Target:
+    def __init__(self, name):
+        self.__id = name
+
+    def __getitem__(self, item):
+        """make class[item] usable"""
+        if item >= len(self.__id):
+            raise RuntimeError('invalid input')
+        return self.__id[item]
+
+    def __str__(self):
+        """
+        override when call class
+        """
+        if not isinstance(self.__id, str):
+            raise RuntimeError('invalid input')
+        return self.__id + ' sacred'
+
+
+a = Target('Cute')
+print(a)
+print(a[3])
+
 ```
 
 # 算法
