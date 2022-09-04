@@ -734,6 +734,28 @@ print(buf.raw)
 
 ```
 
+# 生成器
+
+节省内存空间，不会一次性生成所有的数据，而是什么时候需要，什么时候生成
+
+```python
+from itertools import product
+
+test_pract = [0, 1]
+test_pit = [0, 1, 2, 3]
+test_meset = [0, 1]
+
+
+def generate_test_param():
+    for pract, pit, mset in product(test_pract, test_pit, test_meset):
+        yield pract, pit, mset
+
+
+for ele in generate_test_param():
+    print('now tested param: {} {} {}'.format(ele[0], ele[1], ele[2]))
+
+```
+
 # 装饰器
 
 在不改变原有功能代码的基础上,添加额外的功能,如用户验证等。有助于让代码更简短
@@ -757,6 +779,35 @@ def fun(argc):
 ```
 
 使用类装饰器还可以依靠类内部的 `__call__`方法
+
+```python
+class DivideDec(object):
+    """
+    判断除法是否valid
+    """
+    def __init__(self, func):  # 将divide作为参数传给DivideDec
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        exp_res = kwargs.get('exp', 'success')
+        try:
+            res = self.func(*args, **kwargs)
+        except Exception as err:
+            if exp_res in err.args[0]:
+                print('devide as expected:{}'.format(err.args[0]))
+            else:
+                raise Exception('expected is {} but actual is {}'.format(exp_res, err.args[0]))
+        else:
+            return res
+
+
+@DivideDec
+def divide(a, b, **kwargs):
+    return a/b
+
+
+divide(3, 0, exp='division by zero')
+```
 
 # 异常处理
 
