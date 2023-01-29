@@ -1,1 +1,10 @@
 *.pyc
+*.xml
+*.DS_Store
+*.xcuserstate
+*.plist
+*.iml
+*.pbxproj
+*.xcworkspacedata
+*.xcbkptlist
+*.class

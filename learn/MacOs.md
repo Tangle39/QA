@@ -9,3 +9,11 @@ Thumbs.db是一个用于Microsoft Windows XP或mac os x缓存Windows Explorer的
 `$ sudo spctl --master-disable` 即可~
 
 export 查看当前环境变量
+
+* 显示隐藏文件
+
+键盘键Cmd + Shift +.
+
+* 查看电池情况
+
+ioreg -rn AppleSmartBattery | grep -i capacity
