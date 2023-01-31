@@ -17,3 +17,10 @@ export 查看当前环境变量
 * 查看电池情况
 
 ioreg -rn AppleSmartBattery | grep -i capacity
+
+* 从zsh切回bash
+
+  ```sh
+  chsh -s /bin/bash
+  ```
+
