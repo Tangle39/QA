@@ -1,7 +1,23 @@
 # Mac命令  
 打开某个隐藏文件夹：`open /usr/bin` 
 寻找某个名字的文件：`sudo find / -iname ‘chromedriver'` 
-查看rootless（系统默认将会锁定 /system /sbin /usr 这三个目录）状态：csrutil status 
+
+## SIP
+
+System Integrity Protection，enable将保护 /system /sbin /usr 这三个目录
+
+查看SIP状态：`csrutil status` 
+
+* disable
+
+  将 Mac 开机，立即在键盘上按住 Command ⌘ + R，直到看到 Apple 标志或旋转的地球时松开。看到「实用工具」窗口时，恢复功能启动即完成。点击「实用工具」选择「终端」
+
+  `csrutil disable`
+
+* enable
+
+  `csrutil enable`
+
 防止 .DS_Store 文件的生成: defaults write com.apple.desktopservices DSDontWriteNetworkStores true 
 
 软件有经过了汉化或者破解，所以可能被Mac认为「已损坏」
@@ -21,6 +37,12 @@ ioreg -rn AppleSmartBattery | grep -i capacity
 
   ```sh
   chsh -s /bin/bash
+  ```
+
+* 清除小红点(临时)
+
+  ```sh
+  defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
   ```
 
 # 开机启动项
