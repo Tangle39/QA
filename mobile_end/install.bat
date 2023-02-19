@@ -1,3 +1,4 @@
+:: 依据路径安装APP
 @echo off
 set lujing=
 if "%lujing%"=="" (
