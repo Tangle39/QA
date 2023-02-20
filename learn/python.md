@@ -752,6 +752,19 @@ print(buf.raw)
 
 ```
 
+# 文件
+
+文件的读写操作默认使用系统编码，可以通过调用 `sys.getdefaultencoding()` 来得到。 在大多数机器上面都是utf-8编码。如果你已经知道你要读写的文本是其他编码方式， 那么可以通过传递一个可选的 `encoding` 参数给open()函数。如下所示：
+
+```python
+with open('somefile.txt', 'rt', encoding='latin-1') as f:
+    ...
+```
+
+Python支持非常多的文本编码。几个常见的编码是ascii, latin-1, utf-8和utf-16。 在web应用程序中通常都使用的是UTF-8。 ascii对应从U+0000到U+007F范围内的7位字符。 latin-1是字节0-255到U+0000至U+00FF范围内Unicode字符的直接映射。 **当读取一个未知编码的文本时使用latin-1编码永远不会产生解码错误。**
+
+refer: https://python3-cookbook.readthedocs.io/zh_CN/latest/c05/p01_read_write_text_data.html
+
 # 生成器
 
 节省内存空间，不会一次性生成所有的数据，而是什么时候需要，什么时候生成
