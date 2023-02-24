@@ -1,3 +1,6 @@
+import random
+
+
 def trans(string: str):
     """
     将字符串去掉'_',首字母大写，然后重新拼接
@@ -55,6 +58,27 @@ def primes(n):
             yield i
 
 
+def random_sum():
+    """
+    随机生成128个正整数，每个数小于1024，总和为8192
+    """
+    nums = [0] * 128
+    target_sum = 8192
+    rand_nums = [random.randint(1, 1024) for _ in range(128)]
+    rand_sum = sum(rand_nums)
+    # 初次分配，使得sum接近target
+    for i in range(128):
+        nums[i] = rand_nums[i] * target_sum // rand_sum
+
+    diff = target_sum - sum(nums)
+    while diff > 0:  # 如果有剩余，则将剩余的值加到nums中
+        idx = random.randint(0, 127)
+        if nums[idx] < 1024:
+            nums[idx] += 1
+            diff -= 1
+    return nums
+
+
 if __name__ == '__main__':
-    prime_list = list(primes(100))
-    print(prime_list)
+    res = random_sum()
+    print(res, len(res), sum(res))
