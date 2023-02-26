@@ -1,6 +1,6 @@
 
 
-# Table of Contents
+# 目录
 * [基本数据类型](#基本数据类型)
 	* [列表](#列表)
 		* [列表推导式](#列表推导式)
@@ -50,9 +50,9 @@
 	* [multiprocessing](#multiprocessing)
 	* [subprocess](#subprocess)
 	* [queue](#queue)
-		* [1 Queue(maxsize=0)](#1-Queue(maxsize=0))
-		* [2 LifoQueue(maxsize=0)](#2-LifoQueue(maxsize=0))
-		* [3 PriorityQueue(maxsize=0)](#3-PriorityQueue(maxsize=0))
+		* [1 Queue](#1-Queue)
+		* [2 LifoQueue](#2-LifoQueue)
+		* [3 PriorityQueue](#3-PriorityQueue)
 	* [configparser](#configparser)
 	* [logging](#logging)
 	* [struct](#struct)
@@ -563,7 +563,7 @@ except ImportError:
 
 queue 模块即队列，特别适合处理信息在多个线程间安全交换的多线程程序中
 
-### 1 Queue(maxsize=0)
+### 1 Queue
 
 先进先出(First In First Out: FIFO)队列，最早进入队列的数据拥有出队列的优先权
 
@@ -580,7 +580,7 @@ for i in range(3):
     print(q.get())  # 依次从队列中取出插入的元素，数据元素输出顺序为0、1、2
 ```
 
-### 2 LifoQueue(maxsize=0)
+### 2 LifoQueue
 
 后进先出(Last In First Out: LIFO)队列，最后进入队列的数据拥有出队列的优先权，就像栈一样。
 
@@ -597,7 +597,7 @@ for i in range(3):
     print(q.get())  # 依次从队列中取出插入的元素，数据元素输出顺序为2、1、0
 ```
 
-### 3 PriorityQueue(maxsize=0)
+### 3 PriorityQueue
 
 优先级队列，比较队列中每个数据的大小，__值最小的数据__拥有出队列的优先权。数据一般以元组的形式插入，典型形式为(priority_number, data)。如果队列中的数据没有可比性，那么数据将被包装在一个类中，忽略数据值，仅仅比较优先级数字。
 
