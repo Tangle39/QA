@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+#Python 2
 # n = 5
 # print bin(n)
 # print bin(n).replace('0b','').count('1')
@@ -27,6 +28,6 @@ class Solution:
 
 
 s = Solution()
-print bin(-1)
-print s.NumberOf12(-1)
-print s.NumberOf1(-1)
+print(bin(-1))
+print(s.NumberOf12(-1))
+print(s.NumberOf1(-1))
