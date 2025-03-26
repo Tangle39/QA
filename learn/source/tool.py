@@ -1,4 +1,19 @@
+import multiprocessing as mp
 import random
+import threading
+import time
+from multiprocessing import Pool
+
+mp.set_start_method('fork')
+import atexit
+
+
+def unique_random_numbers():
+    # 随机不重复数
+    generated_numbers = list(range(100000))  # 创建一个包含0到99999的列表
+    random.shuffle(generated_numbers)  # 打乱列表中的元素顺序
+    while generated_numbers:
+        yield generated_numbers.pop()
 
 
 def trans(string: str):
@@ -79,6 +94,79 @@ def random_sum():
     return nums
 
 
+def timing_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{func.__name__} executed in {end_time - start_time:.4f} seconds")
+        return result
+
+    return wrapper
+
+
+@timing_decorator
+def example_function(n):
+    time.sleep(n)
+    return f"Function ran for {n} seconds"
+
+
+@timing_decorator
+def cal_large_sum(arr):
+    def compute_sum(_arr, result, idx):
+        time.sleep(5)
+        # print(f'start {_arr[0]} end {_arr[-1]}')
+        result[idx] = sum(_arr)
+
+    n_threads = 4
+    chunk_size = len(arr) // n_threads
+    threads = []
+    results = [0] * n_threads
+
+    for i in range(n_threads):
+        start = i * chunk_size
+        end = (i + 1) * chunk_size
+        thread = threading.Thread(target=compute_sum, args=(arr[start:end], results, i))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+    return sum(results)
+
+
+def compute_partial_sum(chunk):
+    return sum(chunk)
+
+
+@timing_decorator
+def cal_sum_2(arr):
+    n_processes = 4
+    chunk_size = len(arr) // n_processes
+
+    # 分割数组为多个子任务
+    chunks = [arr[i * chunk_size:(i + 1) * chunk_size] for i in range(n_processes)]
+
+    with Pool(n_processes) as pool:
+        results = pool.map(compute_partial_sum, chunks)
+    return sum(results)
+
+
+@timing_decorator
+def cal_sum(arr):
+    return sum(arr)
+
+class Test:
+    def clean_up(self):
+        print("Cleaning up resources...")
+
+test = Test()
+atexit.register(test.clean_up)
 if __name__ == '__main__':
-    res = random_sum()
-    print(res, len(res), sum(res))
+    cnt = 0
+    while True:
+        print('sleep')
+        time.sleep(1)
+        cnt += 1
+        if cnt == 5:
+            break
